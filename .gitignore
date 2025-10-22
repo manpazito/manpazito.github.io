@@ -1,0 +1,35 @@
+# Ignore Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+
+# Ignore local environment files
+.env
+.env.*
+*.bak
+*.tmp
+*.swp
+*.log
+
+# Ignore system & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.code-workspace
+
+# Ignore drafts, notes, or local-only markdown
+drafts/
+notes/
+private/
+*.md~    # backup markdowns
+
+# Ignore image or asset work files (if any)
+assets/originals/
+assets/raw/
+
+# Ignore Python or Node files if you use helper scripts
+__pycache__/
+*.pyc
+node_modules/

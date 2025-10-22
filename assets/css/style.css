@@ -1,0 +1,109 @@
+/* --- Global reset & typography --- */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+/* --- Header --- */
+.header {
+    background-color: #fff;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    color: #222;
+}
+
+/* --- Main Layout --- */
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* --- Two-column intro --- */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.intro-left {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.intro-right {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.degree-info h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.degree-info h3 {
+    font-weight: 400;
+    color: #666;
+}
+
+/* --- About section --- */
+.about {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #222;
+}
+
+.about p {
+    color: #444;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .degree-info h2,
+    .degree-info h3 {
+        font-size: 1.1rem;
+    }
+}
