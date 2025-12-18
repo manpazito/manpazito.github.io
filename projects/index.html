@@ -1,64 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects — Manuel A. Martinez Garcia</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <h1>Projects</h1>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/cv/">CV</a>
-        </nav>
+      <h1>Projects</h1>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a class="active" href="/projects/">Projects</a>
+        <a href="/cv/">CV</a>
+      </nav>
     </header>
 
     <main class="main-content">
-        <section class="projects-section">
-            <h2>Ongoing</h2>
-            <div class="card-grid">
-                <!-- Example ongoing project -->
-                <article class="card">
-                    <h3>Last-Mile Delivery Optimization</h3>
-                    <p>VRP heuristics & queueing; building metaheuristics and evaluation pipeline.</p>
-                    <p class="card-meta">
-                        <a href="https://github.com/manpazito/bks-challenge" target="_blank" rel="noopener">GitHub</a>
-                    </p>
-                </article>
+      <!-- Ongoing Projects -->
+      <section class="projects-section">
+        <h2>Ongoing</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>
+              Machine Learning Approaches to the CVRP
+              <span class="wip"></span>
+            </h3>
+            <p>
+              Benchmarking classical heuristics against learning-based methods for the Capacitated
+              Vehicle Routing Problem, with an emphasis on performance, scalability, and
+              generalization.
+            </p>
+            <p class="card-meta">
+              <span class="tag">In progress</span>
+            </p>
+          </article>
 
-                <!-- Add more ongoing projects here -->
-            </div>
-        </section>
+          <article class="card">
+            <h3>
+              Cal Transpo Operations Learning Materials
+              <span class="wip"></span>
+            </h3>
+            <p>
+              Developing structured learning materials for the Cal Transpo Operations subteam,
+              covering optimization, simulation, and practical decision-making workflows.
+            </p>
+            <p class="card-meta">
+              <a
+                href="https://github.com/manpazito/ops-learning-mat"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <section class="projects-section">
-            <h2>Past</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Plane Boarding Simulator</h3>
-                    <p>Discrete-event simulation of boarding heuristics (Poisson arrivals, bin usage).</p>
-                    <p class="card-meta">
-                        <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank"
-                            rel="noopener">GitHub</a>
-                    </p>
-                </article>
+      <!-- Past Projects -->
+      <section class="projects-section">
+        <h2>Past</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Plane Boarding Simulator</h3>
+            <p>
+              Discrete-event simulation of aircraft boarding heuristics, modeling passenger
+              arrivals, aisle congestion, and bin usage.
+            </p>
+            <p class="card-meta">
+              <a
+                href="https://github.com/manpazito/plane-boarding-sim"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </p>
+          </article>
 
-                <article class="card">
-                    <h3>Crash Analysis Maps</h3>
-                    <p>GeoPandas + contextily choropleths and radius overlays for safety insights.</p>
-                    <p class="card-meta">
-                        <a href="https://github.com/manpazito" target="_blank" rel="noopener">More</a>
-                    </p>
-                </article>
+          <article class="card">
+            <h3>311 Neighborhood Equity Analysis</h3>
+            <p>
+              Research analysis of 311 service requests to evaluate neighborhood-level equity in
+              response patterns and access to city services, using spatial analysis and
+              public-policy interpretation.
+            </p>
+            <p class="card-meta">
+              <a
+                href="https://github.com/manpazito/311-neighborhood-equity"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+              &nbsp;·&nbsp;
+              <a href="https://arcg.is/0fnbnW0" target="_blank" rel="noopener"> ArcGIS </a>
+            </p>
+          </article>
 
-                <!-- Add more past projects here -->
-            </div>
-        </section>
+          <article class="card">
+            <h3>Predicting Homelessness</h3>
+            <p>
+              Machine learning models to predict homelessness risk using socioeconomic indicators,
+              with feature engineering, evaluation, and policy-oriented interpretation.
+            </p>
+            <p class="card-meta">
+              <a
+                href="https://github.com/manpazito/PredictingHomelessness"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>

@@ -1,54 +1,98 @@
-<!DOCTYPE html>
+/home/manpazito/projects/personal-projects/manpazito.github.io<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manuel A. Martinez Garcia</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-</head>
+  </head>
 
-<body>
-    <header class="header">
-        <h1>Manuel A. Martinez Garcia</h1>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/projects/">Projects</a>
-            <a href="/cv/">CV</a>
-        </nav>
-    </header>
+  <body>
+    <table summary="Table for page layout." id="tlayout">
+      <tr valign="top">
+        <!-- LEFT SIDEBAR MENU -->
+        <td id="layout-menu">
+          <div class="menu-item">
+            <a href="/" class="current"><b>Manuel A. Martinez Garcia</b></a>
+          </div>
+          <div class="menu-item"><a href="/projects/">Projects</a></div>
+          <div class="menu-item"><a href="/cv/">CV</a></div>
+        </td>
 
-    <main class="main-content">
-        <section class="intro">
-            <div class="intro-left">
-                <img src="/assets/img/me.jpg" alt="Photo of Manuel A. Martinez Garcia" class="profile-img" />
-            </div>
+        <!-- RIGHT CONTENT -->
+        <td id="layout-content">
+          <div id="toptitle">
+            <h1>Home</h1>
+          </div>
 
-            <div class="intro-right">
-                <div class="degree-info">
-                    <h2>B.S. Industrial Engineering &amp; Operations Research</h2>
-                    <h3>University of California, Berkeley</h3>
-                </div>
-            </div>
-        </section>
+          <!-- PROFILE BLOCK (PHOTO + INFO) -->
+          <table class="imgtable">
+            <tr>
+              <td>
+                <img
+                  src="/assets/img/me.jpg"
+                  alt="Photo of Manuel Martinez Garcia"
+                  width="260px"
+                  style="border: 1px solid #ccc"
+                />
+                &nbsp;
+              </td>
 
-        <section class="about">
-            <h2>About Me</h2>
-            <p>
-                Hi! Feel free to call me Manny. I’m a senior at UC Berkeley studying Industrial Engineering
-                &amp; Operations Research. I enjoy solving routing and matching problems—especially in transportation
-                and logistics.
-            </p>
-            <p>
-                I write most of my code in Python (comfortable with C++, R, and SQL too). While many projects are
-                academic and transportation-focused,
-                I’m flexible and open to other problem domains.
-            </p>
-            <p>
-                Outside of class, I play soccer (BVB) and guitar.
-            </p>
-        </section>
-    </main>
-</body>
+              <td align="left">
+                <p><b>Manuel “Manny” Martinez Garcia</b></p>
+                <p><b>4th Year — Industrial Engineering &amp; Operations Research (B.S.)</b></p>
+                <p><b>University of California, Berkeley</b></p>
+                <p>Go Bears! Fiat Lux</p>
 
+                <p>
+                  Email:
+                  <a href="mailto:manpazito@berkeley.edu">manpazito@berkeley.edu</a>
+                </p>
+                <p>
+                  GitHub:
+                  <a href="https://github.com/manpazito">github.com/manpazito</a><br />
+                  LinkedIn:
+                  <a href="https://www.linkedin.com/in/manpazito/">linkedin.com/in/manpazito</a>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <!-- ABOUT ME SECTION -->
+          <h2>About Me</h2>
+          <p>
+            I’m a senior undergraduate in <b>Industrial Engineering &amp; Operations Research</b> at
+            the <b>University of California, Berkeley</b>. I’m especially interested in
+            <b>transportation systems</b>, and I enjoy studying how matching and routing logistics
+            can be optimized in real-world environments. Much of my work focuses on building models
+            of operational systems and understanding how algorithms and data shape performance.
+          </p>
+
+          <p>
+            I currently work as a <b>Data Fellow</b> at Berkeley’s
+            <b>Center for Educational Partnerships</b>, where I support data analytics projects that
+            inform educational access, outreach, and program evaluation across campus initiatives.
+          </p>
+
+          <p>
+            I’m also conducting research on <b>last-mile delivery optimization</b> and
+            <b>capacitated vehicle routing problems (CVRP)</b>. This project is funded through the
+            <b>Firebaugh Research Scholars Program</b> and examines structural properties of large
+            routing instances, the performance of modern heuristics on spatial demand patterns, and
+            scalable modeling approaches for practical last-mile logistics systems.
+          </p>
+
+          <!-- CONTACT SECTION -->
+          <h2>Contact</h2>
+          <p>
+            <a href="mailto:manpazito@berkeley.edu">manpazito@berkeley.edu</a>
+          </p>
+
+          <!-- FOOTER -->
+          <div id="footer">
+            <div id="footer-text">Page updated 2025-11-13 · Hosted on GitHub Pages.</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
