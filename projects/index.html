@@ -9,82 +9,116 @@
 
   <body>
     <div id="page">
-      <div id="header">
-        <h1>Projects</h1>
-        <div id="nav">
-          <a href="/">Home</a> · <a href="/projects/">Projects</a> ·
-          <a href="/cv/">CV</a>
+      <div id="theme-toggle-container">
+        <span class="theme-label">Light</span>
+        <input type="checkbox" id="theme-toggle" class="toggle-checkbox" />
+        <label for="theme-toggle" class="toggle-label">
+          <span class="toggle-inner"></span>
+          <span class="toggle-switch"></span>
+        </label>
+        <span class="theme-label">Dark</span>
+      </div>
+      <aside id="sidebar">
+        <nav id="nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/projects/" class="nav-link active">Projects</a>
+          <a href="/cv/" class="nav-link">CV</a>
+        </nav>
+      </aside>
+
+      <main id="content">
+        <div id="header">
+          <h1>Projects</h1>
         </div>
-      </div>
 
-      <div id="content">
-        <h2>Ongoing</h2>
+        <div id="main-content">
+          <h2>Ongoing</h2>
 
-        <p>
-          <b>Machine Learning Approaches to the CVRP</b><br />
-          Benchmarking classical heuristics against learning-based methods for the Capacitated
-          Vehicle Routing Problem, with an emphasis on performance, scalability, and generalization.
-          <br />
-          <i>Work in progress.</i>
-        </p>
+          <p>
+            <b>Machine Learning Approaches to the CVRP</b><br />
+            Benchmarking classical heuristics against learning-based methods for the Capacitated
+            Vehicle Routing Problem, with an emphasis on performance, scalability, and
+            generalization. Funded by the Marco Antonio Firebaugh Scholars Program.
+            <br />
+          </p>
 
-        <p>
-          <b>Cal Transpo Operations Learning Materials</b><br />
-          Developing structured learning materials for the Cal Transpo Operations subteam, covering
-          optimization, simulation, and practical decision-making workflows.
-          <br />
-          <a href="https://github.com/manpazito/ops-learning-mat" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          &nbsp;·&nbsp;
-          <i>Work in progress.</i>
-        </p>
+          <p>
+            <b>Cal Transpo Operations Learning Materials</b><br />
+            Developing structured learning materials for the Cal Transpo Operations subteam,
+            covering optimization, simulation, and practical decision-making workflows.
+            <br />
+            <a href="https://github.com/manpazito/ops-learning-mat" target="_blank" rel="noopener"
+              >GitHub Repository</a
+            >
+          </p>
 
-        <h2>Past</h2>
+          <h2>Past</h2>
 
-        <p>
-          <b>Plane Boarding Simulator</b><br />
-          Discrete-event simulation of aircraft boarding heuristics, modeling passenger arrivals,
-          aisle congestion, and bin usage.
-          <br />
-          <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-        </p>
+          <p>
+            <b>Plane Boarding Simulator</b><br />
+            Discrete-event simulation of aircraft boarding heuristics, modeling passenger arrivals,
+            aisle congestion, and bin usage.
+            <br />
+            <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank" rel="noopener"
+              >GitHub Repository</a
+            >
+          </p>
 
-        <p>
-          <b>311 Neighborhood Equity Analysis</b><br />
-          Research analysis of 311 service requests to evaluate neighborhood-level equity in
-          response patterns and access to city services, using spatial analysis and public-policy
-          interpretation.
-          <br />
-          <a
-            href="https://github.com/manpazito/311-neighborhood-equity"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-          &nbsp;·&nbsp;
-          <a href="https://arcg.is/0fnbnW0" target="_blank" rel="noopener">ArcGIS</a>
-        </p>
+          <p>
+            <b>311 Neighborhood Equity Analysis</b><br />
+            Research analysis of 311 service requests to evaluate neighborhood-level equity in
+            response patterns and access to city services, using spatial analysis and public-policy
+            interpretation.
+            <br />
+            <a
+              href="https://github.com/manpazito/311-neighborhood-equity"
+              target="_blank"
+              rel="noopener"
+              >GitHub Repository</a
+            >
+            &nbsp;·&nbsp;
+            <a href="https://arcg.is/0fnbnW0" target="_blank" rel="noopener">ArcGIS StoryMap</a>
+          </p>
 
-        <p>
-          <b>Predicting Homelessness</b><br />
-          Machine learning models to predict homelessness risk using socioeconomic indicators, with
-          feature engineering, evaluation, and policy-oriented interpretation.
-          <br />
-          <a
-            href="https://github.com/manpazito/PredictingHomelessness"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-        </p>
-      </div>
+          <p>
+            <b>Predicting Homelessness</b><br />
+            Machine learning models to predict homelessness risk using socioeconomic indicators,
+            with feature engineering, evaluation, and policy-oriented interpretation.
+            <br />
+            <a
+              href="https://github.com/manpazito/PredictingHomelessness"
+              target="_blank"
+              rel="noopener"
+              >GitHub Repository</a
+            >
+          </p>
+        </div>
 
-      <div id="footer">
-        <div id="footer-text">Hosted on GitHub Pages.</div>
-      </div>
+        <div id="footer">
+          <div id="footer-text">Hosted on GitHub Pages.</div>
+        </div>
+      </main>
     </div>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('theme');
+
+      // Set initial theme
+      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+        htmlElement.style.colorScheme = 'dark';
+        document.body.classList.add('dark-mode');
+        themeToggle.checked = true;
+      }
+
+      // Theme toggle click handler
+      themeToggle.addEventListener('change', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
   </body>
 </html>
