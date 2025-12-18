@@ -167,6 +167,11 @@ body.dark-mode {
   line-height: 1.7;
 }
 
+.hanging-indent {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+
 /* Links */
 a {
   color: var(--primary);
