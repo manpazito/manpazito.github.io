@@ -9,88 +9,139 @@
 
   <body>
     <div id="page">
-      <div id="header">
-        <h1>Manuel A. Martinez Garcia</h1>
-        <div id="nav">
-          <a href="/">Home</a> · <a href="/projects/">Projects</a> ·
-          <a href="/cv/">CV</a>
-        </div>
+      <div id="theme-toggle-container">
+        <span class="theme-label">Light</span>
+        <input type="checkbox" id="theme-toggle" class="toggle-checkbox" />
+        <label for="theme-toggle" class="toggle-label">
+          <span class="toggle-inner"></span>
+          <span class="toggle-switch"></span>
+        </label>
+        <span class="theme-label">Dark</span>
       </div>
+      <aside id="sidebar">
+        <nav id="nav">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/projects/" class="nav-link">Projects</a>
+          <a href="/cv/" class="nav-link">CV</a>
+        </nav>
+      </aside>
 
-      <div id="content">
-        <div class="intro">
-          <div class="intro-text">
-            <p>
-              <b>Manuel “Manny” Martinez Garcia</b><br />
-              Industrial Engineering and Operations Research (B.S.)<br />
-              University of California, Berkeley
-            </p>
-
-            <p>
-              Email:
-              <a href="mailto:manpazito@berkeley.edu">manpazito@berkeley.edu</a><br />
-              GitHub:
-              <a href="https://github.com/manpazito">github.com/manpazito</a><br />
-              LinkedIn:
-              <a href="https://www.linkedin.com/in/manpazito/">linkedin.com/in/manpazito</a>
-            </p>
-          </div>
-
-          <div class="intro-photo">
-            <img
-              src="/assets/img/me.jpg"
-              alt="Photo of Manuel Martinez Garcia"
-              class="profile-img"
-            />
-          </div>
+      <main id="content">
+        <div id="header">
+          <h1>Manuel A. Martinez Garcia</h1>
         </div>
 
-        <h2>About Me</h2>
+        <div id="main-content">
+          <div class="intro">
+            <div class="intro-text">
+              <p>
+                <b style="font-size: 18px">Manuel "Manny" Martinez Garcia</b><br />
+                Industrial Engineering and Operations Research (B.S.)<br />
+                University of California, Berkeley<br />
+                Go Bears!
+              </p>
+            </div>
 
-        <p>
-          I’m a senior undergraduate in <b>Industrial Engineering and Operations Research</b> at the
-          <b>University of California, Berkeley</b>. I’m especially interested in transportation and
-          mobility systems, and I enjoy modeling and simulating matching and queueing problems that
-          arise in real-world operational settings. Much of my work focuses on understanding how
-          algorithms, data, and system structure interact to shape performance.
-        </p>
+            <div class="intro-photo">
+              <img
+                style="max-width: 200px"
+                src="/assets/img/me.jpg"
+                alt="Photo of Manuel Martinez Garcia"
+                class="profile-img"
+              />
+            </div>
+          </div>
 
-        <p>
-          I currently work as a <b>Data Fellow</b> at Berkeley’s
-          <b>Center for Educational Partnerships</b>, where I support data analytics projects that
-          inform educational access, outreach, and program evaluation across campus initiatives.
-        </p>
+          <h2>About Me</h2>
 
-        <p>
-          My academic interests include vehicle routing, last-mile logistics, and large-scale
-          optimization, but I’m flexible and curious about applying these tools to other problem
-          domains. I have a strong appreciation for computational organization and reproducibility,
-          and I make a point to keep my work well-structured, clearly documented, and version
-          controlled.
-        </p>
+          <p>
+            I'm a senior undergraduate in Industrial Engineering and Operations Research at the
+            University of California, Berkeley. I'm especially interested in research related to
+            transportation and mobility systems, and I enjoy modeling and simulating matching and
+            queueing problems that arise in real-world operational settings. Much of my work focuses
+            on understanding how algorithms, data, and system structure interact to shape
+            performance.
+          </p>
 
-        <p>
-          I also enjoy teaching and mentoring, and I believe that teaching is just as valuable for
-          learning as it is for sharing knowledge. I like breaking down complex ideas into intuitive
-          components and helping others build confidence with technical material.
-        </p>
+          <p>
+            I currently work as a Data Fellow at Berkeley's Center for Educational Partnerships,
+            where I support data analytics projects that inform educational access, outreach, and
+            program evaluation across campus initiatives.
+          </p>
 
-        <p>
-          Outside of academics, I’m an advocate for autism awareness, inspired by my younger
-          brother. I’m also a multi-instrumentalist and enjoy playing both guitar and piano. I’m a
-          big fan of soccer, have supported Borussia Dortmund since 2017 (Heja BVB!), and enjoy
-          playing the sport as well.
-        </p>
+          <p>
+            I'm a member of the Student Chapter of
+            <a href="https://ite.studentorg.berkeley.edu/">Cal ITE</a> (Institute of Transportation
+            Engineers) and serve on the Operations Subteam for the
+            <a href="https://transpo.studentorg.berkeley.edu/">Transportation Team at Berkeley</a>,
+            where I collaborate on projects related to transportation planning and operations.
+          </p>
 
-        <h2>Contact</h2>
-        <p>
-          <a href="mailto:manpazito@berkeley.edu">manpazito@berkeley.edu</a>
-        </p>
-      </div>
+          <p>
+            My academic interests include vehicle routing, last-mile logistics, large-scale
+            optimization, and machine learning applications, but I'm flexible and curious about
+            applying these tools to other problem domains. I have a strong appreciation for
+            computational organization and reproducibility, and I make a point to keep my work
+            well-structured, clearly documented, and version controlled.
+          </p>
 
-      <div id="footer">
-        <div id="footer-text">Page updated 2025 · Hosted on GitHub Pages.</div>
-      </div>
+          <p>
+            I also enjoy teaching and mentoring, and I believe that teaching is just as valuable for
+            learning as it is for sharing knowledge. I like breaking down complex ideas into
+            intuitive components and helping others build confidence with technical material.
+          </p>
+
+          <p>
+            Outside of academics, I'm an advocate for autism awareness, inspired by my younger
+            brother. I also enjoy playing guitar and piano, emphasizing R&B, smooth jazz, and
+            ballads; anything that is calm and relaxed. I'm a big fan of soccer, have supported
+            Borussia Dortmund since 2017 (<i>Heja BVB!</i>), and enjoy playing the sport as well.
+          </p>
+
+          <h2>Contact</h2>
+          <p>Feel free to reach out!</p>
+          <div class="contact-icons">
+            <a href="mailto:manpazito@berkeley.edu" class="contact-link">
+              <img src="/assets/img/icons/email-svgrepo-com.svg" alt="Email" />
+              <span>Email</span>
+            </a>
+            <a href="https://github.com/manpazito" target="_blank" class="contact-link">
+              <img src="/assets/img/icons/github.svg" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/manpazito" target="_blank" class="contact-link">
+              <img src="/assets/img/icons/linkedin.svg" alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <p style="text-align: center">📍 Berkeley, CA</p>
+        </div>
+
+        <div id="footer">
+          <div id="footer-text">Page updated 2025 · Hosted on GitHub Pages.</div>
+        </div>
+      </main>
     </div>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('theme');
+
+      // Set initial theme
+      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+        htmlElement.style.colorScheme = 'dark';
+        document.body.classList.add('dark-mode');
+        themeToggle.checked = true;
+      }
+
+      // Theme toggle click handler
+      themeToggle.addEventListener('change', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
   </body>
 </html>
