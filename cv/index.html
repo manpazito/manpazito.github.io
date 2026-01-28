@@ -1,148 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manny's Resume</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <style>
-      .pdf-viewer {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      .desktop-pdf {
-        width: 100%;
-        height: 85vh;
-        min-height: 600px;
-        border: none;
-        display: block;
-      }
-
-      .mobile-fallback {
-        display: none;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .mobile-fallback img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        margin-bottom: 20px;
-      }
-
-      .mobile-download-btn {
-        display: inline-block;
-        padding: 14px 28px;
-        background: var(--primary);
-        color: white;
-        border-radius: 8px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        margin-top: 10px;
-      }
-
-      .mobile-download-btn:hover {
-        background: var(--primary-light);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      @media (max-width: 768px) {
-        .desktop-pdf {
-          display: none;
-        }
-
-        .mobile-fallback {
-          display: block;
-        }
-      }
-    </style>
   </head>
 
   <body>
     <div id="page">
-      <div id="theme-toggle-container">
-        <span class="theme-label">Light</span>
-        <input type="checkbox" id="theme-toggle" class="toggle-checkbox" />
-        <label for="theme-toggle" class="toggle-label">
-          <span class="toggle-inner"></span>
-          <span class="toggle-switch"></span>
-        </label>
-        <span class="theme-label">Dark</span>
-      </div>
       <aside id="sidebar">
         <nav id="nav">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/projects/" class="nav-link">Projects</a>
-          <a href="/cv/" class="nav-link active">Resume</a>
+          <a href="/" class="nav-link">
+            <img src="/assets/img/icons/home.png" alt="Home" class="nav-sign" />
+          </a>
+          <a href="/projects/" class="nav-link">
+            <img src="/assets/img/icons/projects.png" alt="Projects" class="nav-sign" />
+          </a>
+          <a href="/cv/" class="nav-link active">
+            <img src="/assets/img/icons/resume.png" alt="Resume" class="nav-sign" />
+          </a>
         </nav>
       </aside>
 
       <main id="content">
-        <div id="header">
-          <h1>My Resume</h1>
+        <div class="intro-section">
+          <h1 class="hero-glass header-title">My Resume</h1>
         </div>
 
         <div id="main-content">
-          <div style="text-align: center; margin-bottom: 20px">
+          <div class="center" style="margin-bottom: 20px">
             <a
               href="/assets/cv/ManuelMartinezGarciaResume2025.pdf"
               target="_blank"
               rel="noopener"
-              style="
-                display: inline-block;
-                padding: 12px 24px;
-                background: var(--primary);
-                color: white;
-                border-radius: 8px;
-                font-weight: 600;
-                text-decoration: none;
-                transition: all 0.3s ease;
-              "
-              onmouseover="this.style.background='var(--primary-light)'"
-              onmouseout="this.style.background='var(--primary)'"
+              class="btn btn-primary"
             >
               📄 Download Resume (PDF)
             </a>
           </div>
 
-          <div class="pdf-viewer">
-            <!-- Desktop: Full PDF viewer -->
-            <iframe
-              class="desktop-pdf"
-              src="/assets/cv/ManuelMartinezGarciaResume2025.pdf"
-              title="Resume preview"
-            ></iframe>
-
-            <!-- Mobile: Preview image with download -->
-            <div class="mobile-fallback">
-              <p style="font-size: 18px; margin-bottom: 15px; color: var(--text-dark)">
-                <strong>Mobile View</strong>
-              </p>
-              <img
-                src="/assets/cv/ManuelMartinezGarciaResume2025.png"
-                alt="Resume preview"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-              />
-              <p style="display: none; color: var(--text-light); margin: 20px 0">
-                Preview image not available
-              </p>
-              <a
-                href="/assets/cv/ManuelMartinezGarciaResume2025.pdf"
-                class="mobile-download-btn"
-                download
-              >
-                📥 Download Full Resume
-              </a>
-            </div>
+          <div class="cv-image-container">
+            <img src="/assets/cv/resume.png" alt="Manuel Martinez Garcia Resume" class="cv-image" />
           </div>
 
           <h2>Contact</h2>
@@ -169,26 +68,5 @@
         </div>
       </main>
     </div>
-
-    <script>
-      // Theme toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const htmlElement = document.documentElement;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const savedTheme = localStorage.getItem('theme');
-
-      // Set initial theme
-      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
-        htmlElement.style.colorScheme = 'dark';
-        document.body.classList.add('dark-mode');
-        themeToggle.checked = true;
-      }
-
-      // Theme toggle click handler
-      themeToggle.addEventListener('change', () => {
-        const isDark = document.body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-    </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,61 +9,55 @@
 
   <body>
     <div id="page">
-      <div id="theme-toggle-container">
-        <span class="theme-label">Light</span>
-        <input type="checkbox" id="theme-toggle" class="toggle-checkbox" />
-        <label for="theme-toggle" class="toggle-label">
-          <span class="toggle-inner"></span>
-          <span class="toggle-switch"></span>
-        </label>
-        <span class="theme-label">Dark</span>
-      </div>
       <aside id="sidebar">
-        <nav id="nav">
-          <a href="/" class="nav-link active">Home</a>
-          <a href="/projects/" class="nav-link">Projects</a>
-          <a href="/cv/" class="nav-link">Resume</a>
+        <nav id="nav" class="traffic-light">
+          <a href="/" class="nav-link nav-home active">
+            <img src="/assets/img/icons/home.png" alt="Home" class="nav-sign" />
+          </a>
+          <a href="/projects/" class="nav-link nav-projects">
+            <img src="/assets/img/icons/projects.png" alt="Projects" class="nav-sign" />
+          </a>
+          <a href="/cv/" class="nav-link nav-resume">
+            <img src="/assets/img/icons/resume.png" alt="Resume" class="nav-sign" />
+          </a>
         </nav>
       </aside>
 
       <main id="content">
-        <div id="header">
-          <h1>Manuel A. Martinez Garcia</h1>
-        </div>
+        <div class="intro-section">
+          <h1 class="hero-glass header-title">Manuel A. Martínez García</h1>
 
-        <div id="main-content">
-          <div class="intro">
+          <div class="intro hero-glass">
+            <div class="intro-photo">
+              <img
+                src="/assets/img/me.jpg"
+                alt="Photo of Manuel Martínez García"
+                class="profile-img"
+              />
+            </div>
             <div class="intro-text">
               <p>
-                <b style="font-size: 18px">Manuel "Manny" Martinez Garcia</b><br />
-                <span style="font-size: 14px; color: var(--text-light); font-style: italic"
-                  >He/Him/Él</span
+                <b style="font-size: 24px">Hi, I'm Manny!</b><br />
+                <span style="font-size: 18px; color: #ffffff; font-weight: 600">He/Him/Él</span
                 ><br />
                 B.S., Industrial Engineering & Operations Research<br />
                 University of California, Berkeley<br />
                 Go Bears!
               </p>
             </div>
-
-            <div class="intro-photo">
-              <img
-                style="max-width: 200px"
-                src="/assets/img/me.jpg"
-                alt="Photo of Manuel Martinez Garcia"
-                class="profile-img"
-              />
-            </div>
           </div>
+        </div>
 
+        <div id="main-content">
           <h2>About Me</h2>
 
           <p>
             I'm a proud Guatemalan and a senior undergraduate in Industrial Engineering and
             Operations Research at the University of California, Berkeley. I'm especially interested
-            in research related to transportation and mobility systems, and I enjoy modeling and
-            simulating matching and queueing problems that arise in real-world operational settings.
-            Much of my work focuses on understanding how algorithms, data, and system structure
-            interact to shape performance.
+            in research related to transportation and mobility systems, including optimizing routing
+            problems, and I enjoy modeling and simulating matching and queueing problems that arise
+            in real-world operational settings. Much of my work focuses on understanding how
+            algorithms, data, and system structure interact to shape performance.
           </p>
 
           <p>
@@ -73,11 +67,13 @@
           </p>
 
           <p>
-            I'm a member of the Student Chapter of
-            <a href="https://ite.studentorg.berkeley.edu/">Cal ITE</a> (Institute of Transportation
-            Engineers) and serve on the Operations Subteam for the
-            <a href="https://transpo.studentorg.berkeley.edu/">Transportation Team at Berkeley</a>,
-            where I collaborate on projects related to transportation planning and operations.
+            I'm a member of the student chapter of the Institute of Transportation Engineers (<a
+              href="https://ite.studentorg.berkeley.edu/"
+              >Cal ITE</a
+            >) and serve on the Operations Subteam for the
+            <a href="https://transpo.studentorg.berkeley.edu/"
+              >Cal ASCE Transportation Competition Team</a
+            >, where I collaborate on projects related to transportation planning and operations.
           </p>
 
           <p>
@@ -101,27 +97,13 @@
             Borussia Dortmund since 2017 (<i>Heja BVB!</i>), and enjoy playing the sport as well.
           </p>
 
-          <div style="margin: 30px 0; text-align: center">
+          <div class="center" style="margin: 30px 0">
             <img
               src="/assets/img/cal_ite_team_photo.jpg"
               alt="UC Berkeley Transportation Team at MidPac 2025 Conference"
-              style="
-                max-width: 600px;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              "
+              class="featured-image"
             />
-            <p
-              style="
-                margin-top: 10px;
-                font-size: 14px;
-                color: var(--text-light);
-                font-style: italic;
-              "
-            >
-              With the UC Berkeley Transportation Team at MidPac 2025
-            </p>
+            <p class="image-caption">With the UC Berkeley Transportation Team at MidPac 2025</p>
           </div>
 
           <h2>Funding & Research Groups</h2>
@@ -183,26 +165,5 @@
         </div>
       </main>
     </div>
-
-    <script>
-      // Theme toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const htmlElement = document.documentElement;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const savedTheme = localStorage.getItem('theme');
-
-      // Set initial theme
-      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
-        htmlElement.style.colorScheme = 'dark';
-        document.body.classList.add('dark-mode');
-        themeToggle.checked = true;
-      }
-
-      // Theme toggle click handler
-      themeToggle.addEventListener('change', () => {
-        const isDark = document.body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-    </script>
   </body>
 </html>
