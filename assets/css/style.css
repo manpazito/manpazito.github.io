@@ -89,13 +89,20 @@ body {
 .nav-sign {
   width: 56px;
   height: 56px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: var(--transit-light);
-  padding: 8px;
-  box-sizing: border-box;
   border: 3px solid var(--transit-light);
   transition: all 0.2s ease;
+}
+
+.nav-sign img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-link:hover .nav-sign {
