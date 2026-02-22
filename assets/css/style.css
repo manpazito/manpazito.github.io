@@ -161,7 +161,7 @@ body {
   background: var(--transit-dark);
   background-image: url('/assets/img/transit-photo.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-blend-mode: overlay;
   border-bottom: 3px solid var(--primary);
 }
