@@ -73,8 +73,9 @@ body {
 .nav-link {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  padding: 20px 24px;
+  padding: 18px 24px;
   text-decoration: none;
   color: var(--transit-light);
   font-weight: 600;
@@ -93,140 +94,243 @@ body {
   outline: none;
 }
 
-.nav-link[aria-current=\"page\"] {
+.nav-link[aria-current="page"] {
   background-color: rgba(255, 107, 53, 0.15);
   color: #ffffff;
   border-left-color: var(--primary);
 }
 
-.nav-label {
-  flex-shrink: 0;
+.nav-link[aria-current="page"]::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px currentColor, 0 0 12px rgba(255, 107, 53, 0.6);
+  animation: led-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes led-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px currentColor, 0 0 12px rgba(255, 107, 53, 0.6);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 4px currentColor, 0 0 6px rgba(255, 107, 53, 0.3);
+  }
 }
 
 .nav-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 24px;
+  width: 44px;
+  height: 32px;
   flex-shrink: 0;
   color: var(--primary);
   opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .nav-indicator {
-    transition: opacity 0.15s ease;
-  }
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .nav-link:hover .nav-indicator,
 .nav-link:focus-visible .nav-indicator {
-  opacity: 0.8;
+  opacity: 0.85;
   transform: translateX(0);
 }
 
-/* Home - Waveform animation */
-.waveform {
-  width: 40px;
-  height: 24px;
-}
-
-.waveform path {
-  opacity: 0.7;
-  animation: waveflow 1.2s ease-in-out infinite;
-}
-
-@keyframes waveflow {
-  0%, 100% {
-    opacity: 0.5;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    opacity: 0.9;
-  }
-}
-
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .waveform path {
+  .nav-indicator {
+    transition: opacity 0.2s ease;
+  }
+  
+  .nav-link:hover .nav-indicator,
+  .nav-link:focus-visible .nav-indicator {
+    opacity: 0.8;
+    transform: translateX(-10px);
+  }
+
+  .sweep-line {
     animation: none;
     opacity: 0.7;
   }
-}
-
-/* Projects - Loading bar animation */
-.loading-bar {
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary) 0%, rgba(255, 107, 53, 0.3) 100%);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-.loading-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 30%;
-  background: var(--primary);
-  border-radius: 2px;
-  animation: fillbar 1.6s ease-in-out infinite;
-}
-
-@keyframes fillbar {
-  0% {
-    width: 0%;
-    left: 0;
-  }
-  50% {
-    width: 100%;
-    left: 0;
-  }
-  100% {
-    width: 100%;
-    left: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .loading-bar::after {
+  
+  .blip-dot {
     animation: none;
-    width: 100%;
+    opacity: 0;
   }
-}
 
-/* Resume - Document unfold animation */
-.doc-icon {
-  width: 24px;
-  height: 24px;
-  transform: scaleY(0.8);
-  transform-origin: center;
-  animation: docunfold 0.8s ease-in-out infinite;
-}
+  .bar-segment rect {
+    animation: none;
+    opacity: 0.8;
+  }
+  
+  .glitch-line {
+    animation: none;
+  }
 
-@keyframes docunfold {
-  0%, 100% {
-    transform: scaleY(0.8);
+  .scanlines {
+    animation: none;
     opacity: 0.6;
   }
-  50% {
-    transform: scaleY(1);
+  
+  .stamp {
+    animation: none;
+    opacity: 0;
+  }
+
+  .nav-link[aria-current="page"]::before {
+    animation: none;
     opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .doc-icon {
-    animation: none;
+/* ===== HOME: Signal Scan (Radar sweep + grid + blip) ===== */
+.signal-scan svg {
+  width: 44px;
+  height: 32px;
+}
+
+.sweep-line {
+  transform-origin: 22px 16px;
+  transform: rotate(0deg);
+  animation: radar-sweep 0.8s ease-in-out infinite;
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+.blip-dot {
+  animation: signal-blip 0.8s ease-in-out infinite;
+}
+
+@keyframes signal-blip {
+  0%, 10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===== PROJECTS: Data Processing (Bar chart with flicker) ===== */
+.data-processing svg {
+  width: 40px;
+  height: 32px;
+}
+
+.bar-segment rect {
+  animation: bar-bounce 0.9s ease-in-out infinite;
+  animation-delay: var(--bar-delay);
+  transform-origin: center bottom;
+}
+
+@keyframes bar-bounce {
+  0%, 10% {
+    transform: scaleY(0.7);
+  }
+  25% {
     transform: scaleY(1);
+  }
+  40%, 100% {
+    transform: scaleY(0.7);
+  }
+}
+
+.glitch-line {
+  animation: glitch-flicker 0.6s ease-in-out infinite;
+}
+
+@keyframes glitch-flicker {
+  0%, 10% {
+    opacity: 0.3;
+    transform: translateX(-1px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(1px);
+  }
+  30%, 100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+}
+
+/* ===== RESUME: Document Verified (Scanlines + stamp animation) ===== */
+.doc-verified svg {
+  width: 40px;
+  height: 32px;
+}
+
+.scanlines {
+  animation: scanline-reveal 0.7s ease-in-out infinite;
+}
+
+@keyframes scanline-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+  }
+  50% {
     opacity: 0.7;
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    opacity: 0.5;
+    clip-path: inset(0% 0 100% 0);
+  }
+}
+
+.stamp {
+  animation: stamp-slide-flash 1s ease-in-out infinite;
+}
+
+@keyframes stamp-slide-flash {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg) translateX(12px);
+  }
+  45% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-15deg) translateX(0);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-15deg) translateX(0);
+  }
+  70% {
+    opacity: 0.3;
+    transform: rotate(-15deg) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-15deg) translateX(-12px);
   }
 }
 
