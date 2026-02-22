@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manny's Resume</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
 
-  <body class="cv-page">
+  <body class="contact-page">
     <div id="page">
       <aside id="sidebar">
         <nav id="nav" aria-label="Main navigation">
@@ -128,7 +128,7 @@
               </a>
             </li>
             <li>
-              <a href="/cv/" class="nav-link" aria-current="page">
+              <a href="/cv/" class="nav-link">
                 <span class="nav-label">Resume</span>
                 <span class="nav-indicator doc-verified">
                   <svg
@@ -186,7 +186,7 @@
               </a>
             </li>
             <li>
-              <a href="/contact/" class="nav-link">
+              <a href="/contact/" class="nav-link" aria-current="page">
                 <span class="nav-label">Contact</span>
                 <span class="nav-indicator contact-icon">
                   <svg
@@ -275,23 +275,80 @@
 
       <main id="content">
         <div class="intro-section header-offset">
-          <h1 class="header-title">My Resume</h1>
+          <h1 class="header-title">Get in Touch</h1>
         </div>
 
-        <div id="main-content">
-          <div class="center" style="margin-bottom: 20px">
-            <a
-              href="/assets/cv/ManuelMartinezGarciaResume2026.pdf"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              📄 Download Resume (PDF)
-            </a>
-          </div>
+        <div id="main-body">
+          <p>
+            Feel free to reach out! Whether you have a question, want to collaborate, or just want
+            to say hello, I'd love to hear from you. My handle across most platforms is
+            <b>@manpazito</b>.
+          </p>
 
-          <div class="cv-image-container">
-            <img src="/assets/cv/resume.png" alt="Manuel Martinez Garcia Resume" class="cv-image" />
+          <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="What's this about?"
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="8"
+                  required
+                  placeholder="Your message..."
+                  class="form-textarea"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  style="vertical-align: middle; margin-right: 8px"
+                >
+                  <path
+                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"
+                  />
+                </svg>
+                Send Email
+              </button>
+            </form>
+
+            <div class="contact-info">
+              <h3>Direct Contact</h3>
+              <p>Prefer to reach out directly? You can email me at:</p>
+              <a href="mailto:manpazito@berkeley.edu" class="email-link">
+                manpazito@berkeley.edu
+              </a>
+
+              <div class="location">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  style="vertical-align: middle; margin-right: 8px"
+                >
+                  <path
+                    d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                  />
+                </svg>
+                Berkeley, CA
+              </div>
+            </div>
           </div>
         </div>
 
@@ -300,5 +357,17 @@
         </div>
       </main>
     </div>
+
+    <script>
+      // Handle form submission with mailto
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const subject = encodeURIComponent(document.getElementById('subject').value);
+        const message = encodeURIComponent(document.getElementById('message').value);
+
+        window.location.href = `mailto:manpazito@berkeley.edu?subject=${subject}&body=${message}`;
+      });
+    </script>
   </body>
 </html>
