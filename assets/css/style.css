@@ -70,49 +70,34 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  padding: 12px 0;
+  color: var(--transit-dark);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 16px 8px;
   border-radius: 50%;
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+  transition: all 0.2s ease;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  position: relative;
-  z-index: 1;
-}
-
-.nav-sign {
   width: 56px;
   height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
   background: var(--transit-light);
   border: 3px solid var(--transit-light);
-  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
 }
 
-.nav-sign img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  display: block;
-}
-
-.nav-link:hover .nav-sign {
+.nav-link:hover {
   transform: scale(1.1);
   border-color: var(--primary);
 }
 
-.nav-link.active .nav-sign {
+.nav-link.active {
   border-color: var(--primary);
   background: var(--primary);
+  color: #ffffff;
 }
 
 /* Main content */
