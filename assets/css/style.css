@@ -74,7 +74,9 @@ body {
   font-weight: 600;
   padding: 12px 0;
   border-radius: 50%;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
   text-align: center;
   display: flex;
   align-items: center;
@@ -165,6 +167,10 @@ body {
   margin: 0;
   overflow: hidden;
   background: var(--transit-dark);
+  background-image: url('/assets/img/transit-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   border-bottom: 3px solid var(--primary);
 }
 
@@ -370,7 +376,6 @@ a.btn:hover {
 
 /* Buttons - Minimalist Transit Style */
 .btn {
-  position: relative;
   display: inline-block;
   padding: 12px 24px;
   border-radius: 2px;
@@ -380,30 +385,16 @@ a.btn:hover {
   background: var(--primary);
   border: none;
   transition: all 0.2s ease;
-  will-change: transform;
-}
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%);
-  pointer-events: none;
 }
 .btn + .btn {
   margin-left: 8px;
 }
 .btn:hover {
-  transform: translateY(-2px);
   background: var(--primary-dark);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* Hero glass container - Minimalist Transit Style */
@@ -416,6 +407,7 @@ a.btn:hover {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Primary - Orange transit accent */
