@@ -33,7 +33,7 @@ body {
 
 /* Sidebar */
 #sidebar {
-  width: 200px;
+  width: 240px;
   background: var(--transit-dark);
   padding: 40px 0;
   border-right: 3px solid var(--primary);
@@ -42,62 +42,192 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  overflow-y: auto;
 }
 
 /* Navigation */
 #nav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 100%;
+  list-style: none;
+  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  position: relative;
-  align-items: center;
 }
 
-#nav::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--primary);
-  transform: translateX(-50%);
-  z-index: 0;
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav-list li {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--transit-dark);
-  font-weight: 700;
-  font-size: 12px;
-  border-radius: 50%;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: var(--transit-light);
-  border: 3px solid var(--transit-light);
+  gap: 16px;
+  padding: 20px 24px;
+  text-decoration: none;
+  color: var(--transit-light);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
   position: relative;
-  z-index: 1;
-  line-height: 1.2;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: #ffffff;
+  outline: none;
+}
+
+.nav-link[aria-current=\"page\"] {
+  background-color: rgba(255, 107, 53, 0.15);
+  color: #ffffff;
+  border-left-color: var(--primary);
+}
+
+.nav-label {
   flex-shrink: 0;
 }
 
-.nav-link:hover {
-  transform: scale(1.1);
-  border-color: var(--primary);
+.nav-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link.active {
-  border-color: var(--primary);
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .nav-indicator {
+    transition: opacity 0.15s ease;
+  }
+}
+
+.nav-link:hover .nav-indicator,
+.nav-link:focus-visible .nav-indicator {
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+/* Home - Waveform animation */
+.waveform {
+  width: 40px;
+  height: 24px;
+}
+
+.waveform path {
+  opacity: 0.7;
+  animation: waveflow 1.2s ease-in-out infinite;
+}
+
+@keyframes waveflow {
+  0%, 100% {
+    opacity: 0.5;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveform path {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
+/* Projects - Loading bar animation */
+.loading-bar {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, rgba(255, 107, 53, 0.3) 100%);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
   background: var(--primary);
-  color: #ffffff;
+  border-radius: 2px;
+  animation: fillbar 1.6s ease-in-out infinite;
+}
+
+@keyframes fillbar {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-bar::after {
+    animation: none;
+    width: 100%;
+  }
+}
+
+/* Resume - Document unfold animation */
+.doc-icon {
+  width: 24px;
+  height: 24px;
+  transform: scaleY(0.8);
+  transform-origin: center;
+  animation: docunfold 0.8s ease-in-out infinite;
+}
+
+@keyframes docunfold {
+  0%, 100% {
+    transform: scaleY(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doc-icon {
+    animation: none;
+    transform: scaleY(1);
+    opacity: 0.7;
+  }
 }
 
 /* Main content */
@@ -300,7 +430,7 @@ a.btn:hover {
   #sidebar {
     width: 100%;
     height: auto;
-    padding: 16px;
+    padding: 0;
     position: static;
     border-right: none;
     border-bottom: 3px solid var(--primary);
@@ -308,22 +438,48 @@ a.btn:hover {
 
   #nav {
     flex-direction: row;
-    gap: 0;
-    padding: 0;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
-  #nav::before {
-    display: none;
+  .nav-list {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .nav-list li {
+    flex: 1;
   }
 
   .nav-link {
+    flex-direction: column;
     padding: 12px;
-    font-size: 14px;
-    min-width: auto;
-    flex: 1;
-    min-width: 70px;
+    font-size: 11px;
+    gap: 8px;
+    justify-content: center;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    border-bottom-color: var(--primary);
+  }
+
+  .nav-link[aria-current=\"page\"] {
+    border-left: none;
+    border-bottom-color: var(--primary);
+  }
+
+  .nav-indicator {
+    width: 32px;
+    height: 20px;
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  .nav-link:hover .nav-indicator,
+  .nav-link:focus-visible .nav-indicator {
+    opacity: 0.6;
+    transform: translateY(0);
   }
 
   #header {
