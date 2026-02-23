@@ -260,7 +260,7 @@ body {
 @keyframes scanline-reveal {
   0% {
     opacity: 0.2;
-    clip-path: inset(100% 0 0 0);
+    clip-path: inset(0% 0 100% 0);
   }
   50% {
     opacity: 0.95;
@@ -268,7 +268,7 @@ body {
   }
   100% {
     opacity: 0.7;
-    clip-path: inset(0% 0 100% 0);
+    clip-path: inset(100% 0 0 0);
   }
 }
 
