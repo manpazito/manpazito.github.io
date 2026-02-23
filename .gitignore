@@ -6,7 +6,7 @@ _site/
 vendor/
 
 # Ignore local environment files
-.env
+.venv
 .env.*
 *.bak
 *.tmp
