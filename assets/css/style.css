@@ -1114,7 +1114,7 @@ a.btn:hover {
   }
 
   .contact-info {
-    order: -1;
+    order: 1;
     padding: 24px;
   }
 
