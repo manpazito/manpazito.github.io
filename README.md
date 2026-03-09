@@ -1,20 +1,28 @@
 # manpazito.github.io
 
-A personal website hosted on GitHub Pages.
+Personal portfolio site for Manuel Martinez Garcia, hosted on GitHub Pages.
+
+Live at: https://manpazito.github.io
 
 ## Structure
 
-- Home: [index.html](index.html)
-- Projects: [projects/index.html](projects/index.html)
-- Resume: [cv/index.html](cv/index.html)
-- Styles: [assets/css/style.css](assets/css/style.css)
+```
+/               - Home (about, research)
+/projects/      - Engineering and research projects
+/cv/            - Resume (PDF viewer)
+/contact/       - Contact form
+/assets/css/    - Global stylesheet
+/assets/img/    - Images and icons
+/assets/cv/     - Resume PDF
+```
 
-## Editing
+## Stack
 
-- Pages use simple, semantic HTML.
-- Global styles live in a single CSS file with shared components (buttons, cards, PDF viewer).
-- The site uses a clean white theme with subtle accents.
+Static HTML/CSS site. No build step. Push to `main` to deploy.
 
-## Deploy
+## Notes
 
-Push to `main`; GitHub Pages serves from this repository.
+- SEO metadata and Open Graph tags are set per page.
+- JSON-LD Person schema is included on the homepage.
+- PDF viewer on the CV page uses PDF.js.
+- Contact form is handled via Formspree with reCAPTCHA v3.

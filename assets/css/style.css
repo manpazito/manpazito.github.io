@@ -1461,3 +1461,24 @@ a.btn:hover {
   display: block;
   max-width: 400px;
 }
+
+/* Site logo in homepage header */
+.site-header-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+  .site-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
