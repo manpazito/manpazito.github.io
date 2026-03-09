@@ -37,7 +37,6 @@ node_modules/
 # Ignore GIMP images
 *.xcf
 
-# Ignore AI Conversation logs
-.copilot/
-
+# Ignore things to do
 TODO.txt
+.claude/
