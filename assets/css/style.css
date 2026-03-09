@@ -1003,6 +1003,7 @@ a.btn:hover {
     border-bottom-color: var(--primary);
   }
 
+  .nav-link::before,
   .nav-link[aria-current='page']::before {
     display: none;
   }
