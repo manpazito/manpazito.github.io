@@ -231,6 +231,58 @@ body {
   }
 }
 
+/* Project sub-navigation dropdown */
+.project-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  transition:
+    max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-page .project-dropdown {
+  max-height: 400px;
+  padding: 4px 0;
+}
+
+.project-dropdown li {
+  margin: 0;
+  padding: 0;
+}
+
+.project-dropdown-link {
+  display: block;
+  padding: 8px 24px 8px 44px;
+  color: var(--transit-light);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  opacity: 0.65;
+}
+
+.project-dropdown-link:hover,
+.project-dropdown-link:focus-visible {
+  background: rgba(200, 90, 58, 0.1);
+  color: #ffffff;
+  opacity: 1;
+  border-left-color: var(--primary-light);
+  text-decoration: none;
+}
+
+.project-dropdown-link[aria-current='page'] {
+  color: #ffffff;
+  opacity: 1;
+  border-left-color: var(--primary);
+  background: rgba(200, 90, 58, 0.12);
+}
+
 /* ===== HOME: House with warm interior pulse ===== */
 .home-icon svg {
   width: 40px;
@@ -1027,6 +1079,10 @@ a.btn:hover {
     transform: translate3d(0, 0, 0) scale(1);
   }
 
+  .project-dropdown {
+    display: none !important;
+  }
+
   #content {
     margin-left: 0;
     width: 100%;
@@ -1202,6 +1258,18 @@ a.btn:hover {
 }
 .btn-primary:hover {
   background: var(--primary-dark);
+}
+
+/* Outline button variant */
+a.btn.btn-outline {
+  color: var(--primary);
+  background: transparent;
+  border: 2px solid var(--primary);
+}
+
+a.btn.btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff;
 }
 
 @supports not (backdrop-filter: blur(1px)) {
