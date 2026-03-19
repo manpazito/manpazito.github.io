@@ -920,6 +920,115 @@ body {
   text-indent: -2em;
 }
 
+/* Research cards */
+.research-section {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.research-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: stretch;
+  column-gap: 28px;
+}
+
+.research-card-content {
+  max-width: 74ch;
+}
+
+.research-title {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.research-subtitle {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.research-points {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  max-width: 70ch;
+}
+
+.research-points li {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  max-width: 72ch;
+}
+
+.tag-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  background: #f3f4f6;
+  color: #3f3f46;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tag-topic {
+  background: #e8f1ff;
+  border-color: #cfe1ff;
+  color: #1f4a8a;
+}
+
+.tag-method {
+  background: #e8f7ee;
+  border-color: #cdebd9;
+  color: #1f6a45;
+}
+
+.tag-tool {
+  background: #fff3df;
+  border-color: #ffe2b8;
+  color: #8a4b13;
+}
+
+.tag-impact {
+  background: #f7ebff;
+  border-color: #e7d4fb;
+  color: #5d2f8e;
+}
+
+.projects-list-page #main-content p .tag-list {
+  margin: 10px 0 2px;
+}
+
+.research-logo-col {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-logo {
+  width: auto;
+  height: auto;
+  max-width: 108px;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.72;
+}
+
 /* Links */
 a {
   color: var(--primary);
@@ -1277,6 +1386,46 @@ a.btn:hover {
   .contact-container {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .research-section {
+    gap: 26px;
+  }
+
+  .research-card {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .research-card-content {
+    max-width: none;
+  }
+
+  .research-points {
+    max-width: none;
+  }
+
+  .tag-list {
+    max-width: none;
+    gap: 6px;
+  }
+
+  .tag-chip {
+    font-size: 0.74rem;
+    padding: 3px 8px;
+  }
+
+  .research-logo-col {
+    height: auto;
+    justify-content: center;
+  }
+
+  .research-logo {
+    display: block;
+    margin: 0;
+    max-width: 96px;
+    max-height: 56px;
+    opacity: 0.62;
   }
 
   .contact-info {
