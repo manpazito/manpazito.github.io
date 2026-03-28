@@ -135,7 +135,7 @@
       },
     ],
     contact: {
-      email: 'manpazito@berkeley.edu',
+      email: 'manpazito@gmail.com',
       recaptchaSiteKey: '6LeSu3QsAAAAAG4NmlTL3GkFBmFfikYrCcdcyYHX',
       formspreeEndpoint: 'https://formspree.io/f/xnjbonvv',
       submitCooldownMs: 60000,

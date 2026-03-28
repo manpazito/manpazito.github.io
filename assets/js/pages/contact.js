@@ -4,7 +4,7 @@
   var siteConfig = window.SiteConfig || {};
   var contactConfig = siteConfig.contact || {};
 
-  var emailAddress = contactConfig.email || 'manpazito@berkeley.edu';
+  var emailAddress = contactConfig.email || 'manpazito@gmail.com';
   var recaptchaSiteKey = contactConfig.recaptchaSiteKey || '';
   var formspreeEndpoint = contactConfig.formspreeEndpoint || 'https://formspree.io/f/xnjbonvv';
   var submitCooldownMs = contactConfig.submitCooldownMs || 60000;
