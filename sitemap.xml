@@ -12,6 +12,46 @@
   </url>
 
   <url>
+    <loc>https://manpazito.github.io/projects/drone-battery/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/cvrp-ml/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/cal-transpo/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/ca-college-going-cep/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/wind-turbine/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/plane-boarding/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/311-equity/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/predicting-homelessness/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://manpazito.github.io/cv/</loc>
     <priority>0.8</priority>
   </url>

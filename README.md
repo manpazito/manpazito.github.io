@@ -9,16 +9,36 @@ Live at: https://manpazito.github.io
 ```
 /               - Home (about, research)
 /projects/      - Engineering and research projects
+/projects/*/    - Individual project detail pages
 /cv/            - Resume (PDF viewer)
 /contact/       - Contact form
 /assets/css/    - Global stylesheet
 /assets/img/    - Images and icons
 /assets/cv/     - Resume PDF
+/sitemap.xml    - Search crawler URL index
+/robots.txt     - Crawler directives + sitemap location
+/_config.yml    - GitHub Pages/Jekyll site config
 ```
 
 ## Stack
 
-Static HTML/CSS site. No build step. Push to `main` to deploy.
+- Static HTML/CSS site
+- No frontend framework or bundler
+- Served via GitHub Pages
+
+## Local development
+
+No build step is required. From the repo root, serve files locally with any static server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Deployment
+
+Push to `main` to deploy via GitHub Pages.
 
 ## Notes
 
@@ -26,3 +46,4 @@ Static HTML/CSS site. No build step. Push to `main` to deploy.
 - JSON-LD Person schema is included on the homepage.
 - PDF viewer on the CV page uses PDF.js.
 - Contact form is handled via Formspree with reCAPTCHA v3.
+- When adding/removing pages, keep `sitemap.xml` in sync.
