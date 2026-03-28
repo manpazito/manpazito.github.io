@@ -902,6 +902,16 @@ body {
   font-size: 1.5rem;
 }
 
+/* Tighter spacing for project list entries after tag-chip removal */
+.projects-list-page #main-content p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.projects-list-page #main-content p > a.btn {
+  margin-top: 4px;
+}
+
 /* Paragraphs */
 #main-content p {
   margin-top: 14px;
@@ -962,55 +972,6 @@ body {
 .research-points li {
   margin: 8px 0;
   line-height: 1.7;
-}
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 0;
-  max-width: 72ch;
-}
-
-.tag-chip {
-  display: inline-block;
-  padding: 3px 10px;
-  border: 1px solid transparent;
-  background: #f3f4f6;
-  color: #3f3f46;
-  font-size: 0.78rem;
-  line-height: 1.4;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.tag-topic {
-  background: #e8f1ff;
-  border-color: #cfe1ff;
-  color: #1f4a8a;
-}
-
-.tag-method {
-  background: #e8f7ee;
-  border-color: #cdebd9;
-  color: #1f6a45;
-}
-
-.tag-tool {
-  background: #fff3df;
-  border-color: #ffe2b8;
-  color: #8a4b13;
-}
-
-.tag-impact {
-  background: #f7ebff;
-  border-color: #e7d4fb;
-  color: #5d2f8e;
-}
-
-.projects-list-page #main-content p .tag-list {
-  margin: 10px 0 2px;
 }
 
 .research-logo-col {
@@ -1403,16 +1364,6 @@ a.btn:hover {
 
   .research-points {
     max-width: none;
-  }
-
-  .tag-list {
-    max-width: none;
-    gap: 6px;
-  }
-
-  .tag-chip {
-    font-size: 0.74rem;
-    padding: 3px 8px;
   }
 
   .research-logo-col {
