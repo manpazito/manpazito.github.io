@@ -50,7 +50,7 @@
       return (
         '<lottie-player src="' +
         escapeHtml(indicator.src) +
-        '" background="transparent" speed="0.8" style="width:40px;height:40px"></lottie-player>'
+        '" background="transparent" speed="0.8" class="nav-lottie-player"></lottie-player>'
       );
     }
 

@@ -179,6 +179,11 @@ body {
   transform-origin: 50% 50%;
 }
 
+.nav-lottie-player {
+  width: 40px;
+  height: 40px;
+}
+
 .nav-link:hover .nav-indicator,
 .nav-link:focus-visible .nav-indicator {
   opacity: 1;
@@ -883,6 +888,16 @@ body {
   color: var(--transit-light);
 }
 
+.intro-greeting {
+  font-size: 24px;
+}
+
+.intro-pronouns {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .intro-photo {
   flex: 0 0 220px;
   text-align: center;
@@ -928,6 +943,43 @@ body {
 .hanging-indent {
   margin-left: 2em;
   text-indent: -2em;
+}
+
+.research-entry {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.research-entry-logo {
+  align-self: stretch;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  max-width: 120px;
+  margin-left: auto;
+}
+
+.section-spaced {
+  margin: 30px 0;
+}
+
+.section-subheading {
+  font-size: 1.4rem;
+}
+
+.repo-icon {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.project-logo {
+  height: 34px;
+  margin: 4px 0 6px;
+}
+
+.project-logo--with-gap {
+  margin-right: 12px;
 }
 
 /* Research cards */
@@ -1737,6 +1789,26 @@ a.btn.btn-outline:hover {
   font-size: 15px;
   color: var(--text);
   font-weight: 600;
+}
+
+.fun-fact--compact {
+  font-size: 10.25pt;
+}
+
+.contact-inline-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.error-notification {
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  bottom: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  display: none;
 }
 
 .bart-map-container {
