@@ -7,16 +7,19 @@ Live at: https://manpazito.github.io
 ## Structure
 
 ```
-/               - Home (about, research)
 /projects/      - Engineering and research projects
 /projects/*/    - Individual project detail pages
 /cv/            - Resume (PDF viewer)
 /contact/       - Contact form
+
 /assets/css/    - Global stylesheet
 /assets/img/    - Images and icons
 /assets/cv/     - Resume PDF
+
 /sitemap.xml    - Search crawler URL index
+
 /robots.txt     - Crawler directives + sitemap location
+
 /_config.yml    - GitHub Pages/Jekyll site config
 ```
 
