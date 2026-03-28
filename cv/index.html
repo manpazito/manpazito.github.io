@@ -51,79 +51,9 @@
       </main>
     </div>
 
-    <script>
-      // PDF.js setup
-      pdfjsLib
-        .getDocument('/assets/cv/ManuelMartinezGarciaResume2026.pdf')
-        .promise.then(function (pdf) {
-          let currentPage = 1;
-          const totalPages = pdf.numPages;
-
-          // Update total pages display
-          document.getElementById('total-pages').textContent = totalPages;
-
-          function renderPage(pageNum) {
-            pdf.getPage(pageNum).then(function (page) {
-              const scale = window.innerWidth < 768 ? 2 : 3;
-              const viewport = page.getViewport({ scale: scale });
-              const canvas = document.getElementById('pdf-canvas');
-              const context = canvas.getContext('2d');
-
-              canvas.width = viewport.width;
-              canvas.height = viewport.height;
-
-              const renderContext = {
-                canvasContext: context,
-                viewport: viewport,
-              };
-
-              page.render(renderContext);
-              document.getElementById('current-page').textContent = pageNum;
-            });
-          }
-
-          // Initial render
-          renderPage(currentPage);
-
-          // Navigation buttons
-          document.getElementById('prev-page').addEventListener('click', function () {
-            if (currentPage > 1) {
-              currentPage--;
-              renderPage(currentPage);
-            }
-          });
-
-          document.getElementById('next-page').addEventListener('click', function () {
-            if (currentPage < totalPages) {
-              currentPage++;
-              renderPage(currentPage);
-            }
-          });
-
-          // Disable/enable buttons based on page
-          function updateNavButtons() {
-            document.getElementById('prev-page').disabled = currentPage === 1;
-            document.getElementById('next-page').disabled = currentPage === totalPages;
-          }
-          updateNavButtons();
-        })
-        .catch(function (error) {
-          console.error('Error loading PDF:', error);
-          document.getElementById('pdf-viewer-container').innerHTML =
-            '<p style="color: red;">Error loading PDF. Please try downloading directly.</p>';
-        });
-
-      // Download button
-      document.getElementById('download-btn').addEventListener('click', function () {
-        const link = document.createElement('a');
-        link.href = '/assets/cv/ManuelMartinezGarciaResume2026.pdf';
-        link.download = 'ManuelMartinezGarcia_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
-    </script>
-
+    <script defer src="/assets/js/config/site-config.js"></script>
+    <script defer src="/assets/js/utils/nav-lottie.js"></script>
     <script defer src="/assets/js/layout/shell.js"></script>
+    <script defer src="/assets/js/pages/cv.js"></script>
   </body>
 </html>
