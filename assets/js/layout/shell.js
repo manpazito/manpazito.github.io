@@ -138,8 +138,41 @@
     return renderNav(currentPage, activeProject) + renderSocialLinks();
   }
 
+  function formatFooterDate(value) {
+    var parsedDate = new Date(value);
+    if (isNaN(parsedDate.getTime())) {
+      return '';
+    }
+    return parsedDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  }
+
+  function getHomeLastUpdatedDate() {
+    var derivedDate = formatFooterDate(document.lastModified);
+    if (derivedDate) {
+      return derivedDate;
+    }
+
+    if (footerConfig.homeFallbackDate) {
+      return footerConfig.homeFallbackDate;
+    }
+
+    return formatFooterDate(new Date()) || '';
+  }
+
+  function getHomeFooterText() {
+    var template = footerConfig.homeTemplate || footerConfig.home || 'Last updated {date} · Hosted on GitHub Pages.';
+    if (template.indexOf('{date}') === -1) {
+      return template;
+    }
+    return template.replace('{date}', getHomeLastUpdatedDate());
+  }
+
   function renderFooter(currentPage) {
-    var primaryText = currentPage === 'home' ? footerConfig.home : footerConfig.default;
+    var primaryText = currentPage === 'home' ? getHomeFooterText() : footerConfig.default;
 
     if (!primaryText) {
       primaryText = 'Hosted on GitHub Pages.';

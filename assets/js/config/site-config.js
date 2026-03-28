@@ -29,7 +29,8 @@
 
   window.SiteConfig = {
     footer: {
-      home: 'Last updated March 19, 2026 · Hosted on GitHub Pages.',
+      homeTemplate: 'Last updated {date} · Hosted on GitHub Pages.',
+      homeFallbackDate: 'March 19, 2026',
       default: 'Hosted on GitHub Pages.',
       iconCreditLabel: 'Icons by',
       iconCreditHref: 'https://lordicon.com/',
