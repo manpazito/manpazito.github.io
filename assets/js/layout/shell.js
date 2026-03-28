@@ -163,6 +163,35 @@
     );
   }
 
+  function getPrimaryContentTargetId() {
+    if (document.getElementById('main-content')) {
+      return 'main-content';
+    }
+    if (document.getElementById('main-body')) {
+      return 'main-body';
+    }
+    return 'content';
+  }
+
+  function ensureSkipLink() {
+    if (document.querySelector('.skip-link')) {
+      return;
+    }
+
+    var targetId = getPrimaryContentTargetId();
+    var targetElement = document.getElementById(targetId);
+
+    if (targetElement && !targetElement.hasAttribute('tabindex')) {
+      targetElement.setAttribute('tabindex', '-1');
+    }
+
+    var skipLink = document.createElement('a');
+    skipLink.className = 'skip-link';
+    skipLink.href = '#' + targetId;
+    skipLink.textContent = 'Skip to main content';
+    document.body.insertBefore(skipLink, document.body.firstChild);
+  }
+
   var body = document.body;
   var currentPage = body.getAttribute('data-page') || inferPage(window.location.pathname);
   var activeProject = body.getAttribute('data-project') || inferProjectSlug(window.location.pathname);
@@ -176,6 +205,8 @@
   if (footerEl) {
     footerEl.innerHTML = renderFooter(currentPage);
   }
+
+  ensureSkipLink();
 
   if (typeof utils.bindNavLottieHover === 'function') {
     utils.bindNavLottieHover(document);

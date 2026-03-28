@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
     <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
 
   <body class="contact-page" data-page="contact">
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <!-- Notification bell: plays on user-side form errors -->
     <lottie-player
@@ -150,6 +150,7 @@
       background="transparent"
       speed="1"
       class="error-notification"
+      aria-hidden="true"
     ></lottie-player>
 
     <!-- Google reCAPTCHA v3 Script -->

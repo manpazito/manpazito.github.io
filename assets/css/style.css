@@ -25,6 +25,24 @@ body {
   min-height: 100vh;
 }
 
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  background: #ffffff;
+  color: var(--transit-dark);
+  border: 2px solid var(--primary);
+  padding: 10px 14px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 10002;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 /* Page layout with sidebar */
 #page {
   display: flex;

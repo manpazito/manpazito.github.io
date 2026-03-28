@@ -42,6 +42,26 @@
     var emailButton = document.getElementById('email-copy-btn');
     if (!emailButton) return;
 
+    function fallbackCopy(text) {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.top = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (error) {
+        copied = false;
+      }
+
+      document.body.removeChild(textArea);
+      return copied;
+    }
+
     emailButton.addEventListener('click', function () {
       var originalText = emailButton.textContent;
 
@@ -56,7 +76,18 @@
           })
           .catch(function (error) {
             console.error('Failed to copy:', error);
+            if (fallbackCopy(emailAddress)) {
+              emailButton.textContent = 'Copied!';
+              window.setTimeout(function () {
+                emailButton.textContent = originalText;
+              }, 2000);
+            }
           });
+      } else if (fallbackCopy(emailAddress)) {
+        emailButton.textContent = 'Copied!';
+        window.setTimeout(function () {
+          emailButton.textContent = originalText;
+        }, 2000);
       }
 
       window.location.href = 'mailto:' + emailAddress;
