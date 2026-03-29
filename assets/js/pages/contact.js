@@ -129,7 +129,14 @@
         }, 2000);
       }
 
-      window.location.href = 'mailto:' + emailAddress;
+      var mailtoUrl = 'mailto:' + emailAddress;
+      var popupFeatures = 'noopener,noreferrer,width=520,height=620';
+      var popupWindow = window.open(mailtoUrl, '_blank', popupFeatures);
+
+      if (!popupWindow) {
+        // Fallback when popups are blocked by the browser.
+        window.location.href = mailtoUrl;
+      }
     });
   }
 
