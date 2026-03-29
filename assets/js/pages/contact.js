@@ -10,6 +10,45 @@
   var submitCooldownMs = contactConfig.submitCooldownMs || 60000;
   var maxSubmissionsPerHour = contactConfig.maxSubmissionsPerHour || 10;
   var toastDurationMs = contactConfig.toastDurationMs || 4000;
+  var recaptchaReadyPromise = null;
+
+  function ensureRecaptchaReady() {
+    if (!recaptchaSiteKey) {
+      return Promise.resolve(false);
+    }
+
+    if (window.grecaptcha && typeof window.grecaptcha.ready === 'function') {
+      return new Promise(function (resolve) {
+        window.grecaptcha.ready(function () {
+          resolve(true);
+        });
+      });
+    }
+
+    if (!recaptchaReadyPromise) {
+      recaptchaReadyPromise = new Promise(function (resolve, reject) {
+        var script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(recaptchaSiteKey);
+        script.async = true;
+        script.defer = true;
+        script.onload = function () {
+          if (window.grecaptcha && typeof window.grecaptcha.ready === 'function') {
+            window.grecaptcha.ready(function () {
+              resolve(true);
+            });
+          } else {
+            reject(new Error('reCAPTCHA loaded but grecaptcha is unavailable.'));
+          }
+        };
+        script.onerror = function () {
+          reject(new Error('Failed to load reCAPTCHA script.'));
+        };
+        document.head.appendChild(script);
+      });
+    }
+
+    return recaptchaReadyPromise;
+  }
 
   function showToast(message, type, duration) {
     var toast = document.getElementById('toast');
@@ -103,6 +142,11 @@
 
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
+      var submitButton = form.querySelector('button[type="submit"]');
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
 
       var now = Date.now();
       submissionTimestamps = submissionTimestamps.filter(function (time) {
@@ -111,12 +155,14 @@
 
       if (submissionTimestamps.length >= maxSubmissionsPerHour) {
         showToast('Too many submissions. Please try again later.', 'error');
+        if (submitButton) submitButton.disabled = false;
         return;
       }
 
       if (now - lastSubmitTime < submitCooldownMs) {
         var remainingTime = Math.ceil((submitCooldownMs - (now - lastSubmitTime)) / 1000);
         showToast('Please wait ' + remainingTime + ' seconds before submitting again.', 'error');
+        if (submitButton) submitButton.disabled = false;
         return;
       }
 
@@ -127,12 +173,14 @@
 
       if (!name || !email || !subject || !message) {
         showToast('Please fill in all required fields.', 'error');
+        if (submitButton) submitButton.disabled = false;
         return;
       }
 
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         showToast('Please enter a valid email address.', 'error');
+        if (submitButton) submitButton.disabled = false;
         return;
       }
 
@@ -145,6 +193,7 @@
       for (var i = 0; i < spamPatterns.length; i += 1) {
         if (spamPatterns[i].test(name + subject + message)) {
           showToast('Your message was flagged as spam. Please review and try again.', 'error');
+          if (submitButton) submitButton.disabled = false;
           return;
         }
       }
@@ -153,13 +202,17 @@
       submissionTimestamps.push(now);
 
       var recaptchaToken = '';
-      if (window.grecaptcha && recaptchaSiteKey) {
+      if (recaptchaSiteKey) {
         try {
+          await ensureRecaptchaReady();
           recaptchaToken = await window.grecaptcha.execute(recaptchaSiteKey, {
             action: 'submit',
           });
         } catch (error) {
-          console.warn('reCAPTCHA not available:', error);
+          console.warn('reCAPTCHA unavailable:', error);
+          showToast('Spam protection could not load. Please refresh and try again.', 'error');
+          if (submitButton) submitButton.disabled = false;
+          return;
         }
       }
 
@@ -191,6 +244,10 @@
           'There was an error sending your message. Please try again or email me directly.',
           'error'
         );
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
       }
     });
   }
@@ -198,6 +255,11 @@
   function initContactPage() {
     initCopyEmailButton();
     initContactForm();
+    if (recaptchaSiteKey) {
+      ensureRecaptchaReady().catch(function (error) {
+        console.warn('reCAPTCHA preload failed:', error);
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
