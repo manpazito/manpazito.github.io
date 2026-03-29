@@ -77,9 +77,14 @@
     }, displayDuration);
   }
 
-  function initCopyEmailButton() {
-    var emailButton = document.getElementById('email-copy-btn');
-    if (!emailButton) return;
+  function initEmailActionButtons() {
+    var copyButton = document.getElementById('email-copy-btn');
+    var popupButton = document.getElementById('email-popup-btn');
+    var emailDisplay = document.getElementById('email-address-display');
+
+    if (emailDisplay) {
+      emailDisplay.textContent = emailAddress;
+    }
 
     function fallbackCopy(text) {
       var textArea = document.createElement('textarea');
@@ -101,43 +106,44 @@
       return copied;
     }
 
-    emailButton.addEventListener('click', function () {
-      var originalText = emailButton.textContent;
+    if (copyButton) {
+      copyButton.addEventListener('click', function () {
+        function showCopiedState() {
+          copyButton.classList.add('is-copied');
+          showToast('Email copied to clipboard.', 'success', 1800);
+          window.setTimeout(function () {
+            copyButton.classList.remove('is-copied');
+          }, 1800);
+        }
 
-      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-        navigator.clipboard
-          .writeText(emailAddress)
-          .then(function () {
-            emailButton.textContent = 'Copied!';
-            window.setTimeout(function () {
-              emailButton.textContent = originalText;
-            }, 2000);
-          })
-          .catch(function (error) {
-            console.error('Failed to copy:', error);
-            if (fallbackCopy(emailAddress)) {
-              emailButton.textContent = 'Copied!';
-              window.setTimeout(function () {
-                emailButton.textContent = originalText;
-              }, 2000);
-            }
-          });
-      } else if (fallbackCopy(emailAddress)) {
-        emailButton.textContent = 'Copied!';
-        window.setTimeout(function () {
-          emailButton.textContent = originalText;
-        }, 2000);
-      }
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+          navigator.clipboard
+            .writeText(emailAddress)
+            .then(showCopiedState)
+            .catch(function (error) {
+              console.error('Failed to copy:', error);
+              if (fallbackCopy(emailAddress)) {
+                showCopiedState();
+              } else {
+                showToast('Could not copy email. Please copy manually.', 'error');
+              }
+            });
+        } else if (fallbackCopy(emailAddress)) {
+          showCopiedState();
+        } else {
+          showToast('Could not copy email. Please copy manually.', 'error');
+        }
+      });
+    }
 
-      var mailtoUrl = 'mailto:' + emailAddress;
-      var popupFeatures = 'noopener,noreferrer,width=520,height=620';
-      var popupWindow = window.open(mailtoUrl, '_blank', popupFeatures);
-
-      if (!popupWindow) {
-        // Fallback when popups are blocked by the browser.
-        window.location.href = mailtoUrl;
-      }
-    });
+    if (popupButton) {
+      popupButton.addEventListener('click', function () {
+        var gmailComposeUrl =
+          'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(emailAddress);
+        var popupFeatures = 'popup=yes,noopener,noreferrer,width=900,height=720';
+        window.open(gmailComposeUrl, 'gmailCompose', popupFeatures);
+      });
+    }
   }
 
   function initContactForm() {
@@ -260,7 +266,7 @@
   }
 
   function initContactPage() {
-    initCopyEmailButton();
+    initEmailActionButtons();
     initContactForm();
     if (recaptchaSiteKey) {
       ensureRecaptchaReady().catch(function (error) {
