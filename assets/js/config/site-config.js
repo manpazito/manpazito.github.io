@@ -101,7 +101,7 @@
       },
       {
         slug: 'wind-turbine',
-        label: 'Wind Turbine',
+        label: 'Turbine Blade',
         href: '/projects/wind-turbine/',
       },
       {

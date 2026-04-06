@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wind Turbine Blade Optimization | Manuel Martinez Garcia</title>
-    <meta name="description" content="End-to-end aerodynamic optimization pipeline for wind-turbine blades combining XFOIL airfoil polars, BEM rotor modeling, and NSGA-II style multi-objective search." />
+    <title>Turbine Blade Multi-Objective Optimization | Manuel Martinez Garcia</title>
+    <meta
+      name="description"
+      content="A fun ENGIN 26 turbine blade project exploring design tradeoffs and sharing repository-generated results."
+    />
     <meta name="author" content="Manuel Martinez Garcia" />
-    <meta property="og:title" content="Wind Turbine Blade Optimization | Manuel Martinez Garcia" />
-    <meta property="og:description" content="End-to-end aerodynamic optimization pipeline for wind-turbine blades." />
+    <meta
+      property="og:title"
+      content="Turbine Blade Multi-Objective Optimization | Manuel Martinez Garcia"
+    />
+    <meta
+      property="og:description"
+      content="A fun ENGIN 26 turbine blade project with visual results from the repository."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/projects/wind-turbine/" />
-    <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
+    <meta
+      property="og:image"
+      content="https://manpazito.github.io/assets/img/projects/wind-turbine/pareto-front.png"
+    />
     <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -22,29 +34,94 @@
 
       <main id="content">
         <div class="intro-section header-offset">
-          <h1 class="header-title">Wind Turbine Blade Optimization</h1>
+          <h1 class="header-title">Turbine Blade Multi-Objective Optimization</h1>
         </div>
 
         <div id="main-content">
           <p>
-            This project was built for <b>ENGIN 26: Three-Dimensional Modeling for Design at UC Berkeley</b>
-            as a design-and-analysis workflow for wind-turbine blade development. It links 2D
-            airfoil analysis (XFOIL), 3D rotor performance modeling (BEM), and multi-objective
-            optimization (NSGA-II) to study tradeoffs between power performance and loading.
+            While taking <b>ENGIN 26 - Three-Dimensional Modeling for Design at Berkeley</b>, we
+            needed a way to justify our turbine blade profile, so I decided to build a playful blade
+            design explorer inspired by Li et al. (2023).
           </p>
 
           <p>
-            <a href="https://github.com/manpazito/wind-turbine" target="_blank" rel="noopener" class="btn btn-primary">
+            Instead of hunting for one "perfect" blade, I treated this like a design challenge where
+            multiple strong options can exist, then compared them to see which ones felt like the
+            best overall balance.
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/manpazito/wind-turbine-blade-moo"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
               </svg>
               GitHub Repo
             </a>
+            <a href="/projects/" class="btn btn-outline">Back to Projects</a>
           </p>
 
+          <h2>Repo Results</h2>
+
           <p>
-            For full setup instructions, equations, outputs, and implementation details, see the
-            GitHub repository linked above.
+            Here are highlights directly from repository outputs:
+          </p>
+
+          <ul>
+            <li>
+              High-accuracy run: selected <b>NACA 23012</b> with <b>2 blades</b>.
+            </li>
+            <li>
+              Quick-run summary: selected <b>NACA 2412</b> with <b>2 blades</b> and about
+              <b>840,145 W</b> estimated power.
+            </li>
+            <li>
+              The image outputs show blade shape trends, profile geometry, and tradeoff behavior
+              across candidate designs.
+            </li>
+          </ul>
+
+          <div class="project-figure-grid">
+            <figure class="project-figure">
+              <img
+                src="/assets/img/projects/wind-turbine/best-geometry.png"
+                alt="Generated blade geometry result"
+                class="featured-image"
+              />
+              <figcaption class="image-caption">
+                Generated blade geometry from a selected design.
+              </figcaption>
+            </figure>
+
+            <figure class="project-figure">
+              <img
+                src="/assets/img/projects/wind-turbine/pareto-front.png"
+                alt="Result comparison plot across candidate designs"
+                class="featured-image"
+              />
+              <figcaption class="image-caption">
+                Comparison of candidate designs and their performance tradeoffs.
+              </figcaption>
+            </figure>
+
+            <figure class="project-figure">
+              <img
+                src="/assets/img/projects/wind-turbine/best-airfoil-profile.png"
+                alt="Selected airfoil profile"
+                class="featured-image"
+              />
+              <figcaption class="image-caption">
+                Airfoil profile picked by the repository workflow.
+              </figcaption>
+            </figure>
+          </div>
+
+          <p>
+            For the full code, run settings, and generated files, check the GitHub repo above.
           </p>
 
           <p>

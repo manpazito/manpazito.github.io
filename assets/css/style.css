@@ -1433,6 +1433,64 @@ a.btn.btn-outline:hover {
   font-style: italic;
 }
 
+.project-preview-thumb {
+  width: min(100%, 640px);
+  height: auto;
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  margin: 10px 0 8px;
+}
+
+.project-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+
+.project-summary-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.project-summary-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--transit-dark);
+}
+
+.project-summary-card p {
+  margin: 0;
+}
+
+.project-figure {
+  margin: 22px 0;
+}
+
+.project-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-figure-grid .project-figure:last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .project-summary-grid,
+  .project-figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-figure-grid .project-figure:last-child {
+    grid-column: auto;
+  }
+}
+
 /* PDF Viewer Styles */
 .cv-controls {
   display: flex;
