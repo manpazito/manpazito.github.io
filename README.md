@@ -39,6 +39,16 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Updating resume
+
+To update the resume PDF, run:
+
+```bash
+./update-resume.sh
+```
+
+This copies the latest resume from `../../Documents/resumes/Manuel-Martinez-Garcia-Resume.pdf` to `assets/cv/ManuelMartinezGarciaResume2026.pdf`.
+
 ## Deployment
 
 Push to `main` to deploy via GitHub Pages.
