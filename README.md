@@ -1,6 +1,6 @@
 # manpazito.github.io
 
-Personal portfolio site for Manuel Martinez Garcia, hosted on GitHub Pages.
+Personal portfolio site for Manuel Martinez Garcia, UCLA Master's student in Transportation Engineering, hosted on GitHub Pages.
 
 Live at: https://manpazito.github.io
 
