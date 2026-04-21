@@ -151,15 +151,6 @@
   }
 
   function getHomeLastUpdatedDate() {
-    var derivedDate = formatFooterDate(document.lastModified);
-    if (derivedDate) {
-      return derivedDate;
-    }
-
-    if (footerConfig.homeFallbackDate) {
-      return footerConfig.homeFallbackDate;
-    }
-
     return formatFooterDate(new Date()) || '';
   }
 
