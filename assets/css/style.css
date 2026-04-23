@@ -874,9 +874,10 @@ body {
 
 .profile-img {
   max-width: 220px;
-  height: 220px;
   width: 220px;
+  height: 280px;
   object-fit: cover;
+  object-position: center 100%;
   border-radius: 0;
   border: 4px solid var(--primary);
 }
