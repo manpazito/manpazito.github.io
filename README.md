@@ -1,19 +1,18 @@
 # manpazito.github.io
 
-Personal portfolio site for Manuel Martinez Garcia, UCLA Master's student in Transportation Engineering, hosted on GitHub Pages.
+Personal portfolio site for Manuel Martinez Garcia, UCLA master's student in Transportation Engineering researching optimization, machine learning applications to transportation, routing, and simulation.
 
 Live at: https://manpazito.github.io
 
 ## Structure
 
 ```
-/projects/      - Engineering and research projects
+/projects/      - Research, engineering, and applied data projects
 /projects/*/    - Individual project detail pages
 /cv/            - Resume (PDF viewer)
-/contact/       - Contact form
 
 /assets/css/    - Global stylesheet
-/assets/img/    - Images and icons
+/assets/img/    - Images grouped by type: icons, logos, maps, photos, posters, profile, and project media
 /assets/cv/     - Resume PDF
 
 /sitemap.xml    - Search crawler URL index
@@ -58,5 +57,5 @@ Push to `main` to deploy via GitHub Pages.
 - SEO metadata and Open Graph tags are set per page.
 - JSON-LD Person schema is included on the homepage.
 - PDF viewer on the CV page uses PDF.js.
-- Contact form is handled via Formspree with reCAPTCHA v3.
+- The sidebar email link uses a lightweight human check before opening a mailto link.
 - When adding/removing pages, keep `sitemap.xml` in sync.

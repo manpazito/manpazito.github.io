@@ -28,9 +28,6 @@
     if (pathname.indexOf('/cv/') === 0) {
       return 'cv';
     }
-    if (pathname.indexOf('/contact/') === 0) {
-      return 'contact';
-    }
     return '';
   }
 
@@ -118,10 +115,26 @@
       '<div class="social-links">' +
       socialLinks
         .map(function (link) {
+          var humanCheckAttrs = '';
+          var externalAttrs = ' target="_blank" rel="noopener noreferrer"';
+
+          if (link.humanCheck) {
+            humanCheckAttrs =
+              ' data-human-check="email" data-email-user="' +
+              escapeHtml(link.emailUser || '') +
+              '" data-email-domain="' +
+              escapeHtml(link.emailDomain || '') +
+              '"';
+            externalAttrs = '';
+          }
+
           return (
             '<a href="' +
             escapeHtml(link.href) +
-            '" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="' +
+            '" class="social-link"' +
+            externalAttrs +
+            humanCheckAttrs +
+            ' aria-label="' +
             escapeHtml(link.ariaLabel || link.label || '') +
             '">' +
             (link.icon || '') +
@@ -132,6 +145,130 @@
         .join('') +
       '</div>'
     );
+  }
+
+  function closeHumanCheckDialog() {
+    var overlay = document.querySelector('.human-check-overlay');
+    if (!overlay) {
+      return;
+    }
+
+    var previousFocusSelector = overlay.getAttribute('data-previous-focus');
+    overlay.remove();
+    document.body.classList.remove('human-check-open');
+
+    if (previousFocusSelector) {
+      var previousFocus = document.querySelector(previousFocusSelector);
+      if (previousFocus && typeof previousFocus.focus === 'function') {
+        previousFocus.focus();
+      }
+    }
+  }
+
+  function buildMailtoFromLink(link) {
+    var user = link.getAttribute('data-email-user') || '';
+    var domain = link.getAttribute('data-email-domain') || '';
+
+    if (!user || !domain) {
+      return '';
+    }
+
+    return 'mailto:' + user + '@' + domain;
+  }
+
+  function openHumanCheckDialog(link) {
+    closeHumanCheckDialog();
+
+    var firstNumber = Math.floor(Math.random() * 7) + 3;
+    var secondNumber = Math.floor(Math.random() * 6) + 2;
+    var answer = firstNumber + secondNumber;
+    var titleId = 'human-check-title';
+    var inputId = 'human-check-answer';
+    var previousFocusId = 'human-check-return-' + Date.now();
+
+    if (!link.id) {
+      link.id = previousFocusId;
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'human-check-overlay';
+    overlay.setAttribute('data-previous-focus', '#' + link.id);
+    overlay.innerHTML =
+      '<div class="human-check-dialog" role="dialog" aria-modal="true" aria-labelledby="' +
+      titleId +
+      '">' +
+      '<button type="button" class="human-check-close" aria-label="Close human check">X</button>' +
+      '<h2 id="' +
+      titleId +
+      '">Human Check</h2>' +
+      '<p>Answer this quick check before opening your email app.</p>' +
+      '<form class="human-check-form">' +
+      '<label for="' +
+      inputId +
+      '">What is ' +
+      firstNumber +
+      ' + ' +
+      secondNumber +
+      '?</label>' +
+      '<input id="' +
+      inputId +
+      '" class="human-check-input" type="number" inputmode="numeric" autocomplete="off" required />' +
+      '<p class="human-check-error" role="alert" hidden>Not quite. Please try again.</p>' +
+      '<button type="submit" class="btn btn-primary human-check-submit">Open Email</button>' +
+      '</form>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
+    document.body.classList.add('human-check-open');
+
+    var input = overlay.querySelector('.human-check-input');
+    var form = overlay.querySelector('.human-check-form');
+    var error = overlay.querySelector('.human-check-error');
+    var closeButton = overlay.querySelector('.human-check-close');
+
+    if (input) {
+      input.focus();
+    }
+
+    overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) {
+        closeHumanCheckDialog();
+      }
+    });
+
+    closeButton.addEventListener('click', closeHumanCheckDialog);
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (Number(input.value) !== answer) {
+        error.hidden = false;
+        input.select();
+        return;
+      }
+
+      var mailto = buildMailtoFromLink(link);
+      closeHumanCheckDialog();
+
+      if (mailto) {
+        window.location.href = mailto;
+      }
+    });
+  }
+
+  function bindHumanCheckLinks(root) {
+    root.querySelectorAll('[data-human-check="email"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        openHumanCheckDialog(link);
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeHumanCheckDialog();
+      }
+    });
   }
 
   function renderSidebar(currentPage, activeProject) {
@@ -235,4 +372,6 @@
   if (typeof utils.bindNavLottieHover === 'function') {
     utils.bindNavLottieHover(document);
   }
+
+  bindHumanCheckLinks(document);
 })(window);

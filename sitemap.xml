@@ -12,12 +12,32 @@
   </url>
 
   <url>
-    <loc>https://manpazito.github.io/projects/drone-battery/</loc>
+    <loc>https://manpazito.github.io/projects/dynamic-ride-pooling/</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://manpazito.github.io/projects/cvrp-ml/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/calyber/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/cooperative-congestion/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/multimodal-bike-router/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/plane-boarding/</loc>
     <priority>0.7</priority>
   </url>
 
@@ -32,16 +52,6 @@
   </url>
 
   <url>
-    <loc>https://manpazito.github.io/projects/wind-turbine/</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://manpazito.github.io/projects/plane-boarding/</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://manpazito.github.io/projects/311-equity/</loc>
     <priority>0.7</priority>
   </url>
@@ -52,13 +62,13 @@
   </url>
 
   <url>
-    <loc>https://manpazito.github.io/cv/</loc>
-    <priority>0.8</priority>
+    <loc>https://manpazito.github.io/projects/wind-turbine/</loc>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://manpazito.github.io/contact/</loc>
-    <priority>0.7</priority>
+    <loc>https://manpazito.github.io/cv/</loc>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

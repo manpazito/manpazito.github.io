@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plane Boarding Simulator | Manuel Martinez Garcia</title>
-    <meta name="description" content="Discrete-time, agent-based simulator for commercial aircraft boarding with passengers, aisle movement constraints, and overhead-bin interactions." />
+    <title>Stochastic Modeling of Airline Cabin Boarding Efficiency | Manuel Martinez Garcia</title>
+    <meta
+      name="description"
+      content="Stochastic and agent-based aircraft boarding simulator for evaluating boarding strategies under realistic passenger behaviors and aircraft configurations."
+    />
     <meta name="author" content="Manuel Martinez Garcia" />
-    <meta property="og:title" content="Plane Boarding Simulator | Manuel Martinez Garcia" />
-    <meta property="og:description" content="Discrete-time, agent-based simulator for commercial aircraft boarding." />
+    <meta
+      property="og:title"
+      content="Stochastic Modeling of Airline Cabin Boarding Efficiency | Manuel Martinez Garcia"
+    />
+    <meta
+      property="og:description"
+      content="Stochastic and agent-based aircraft boarding simulator for evaluating boarding strategies under realistic passenger behaviors and aircraft configurations."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/projects/plane-boarding/" />
-    <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
+    <meta property="og:image" content="https://manpazito.github.io/assets/img/profile/me.jpg" />
     <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -22,14 +31,15 @@
 
       <main id="content">
         <div class="intro-section header-offset">
-          <h1 class="header-title">Plane Boarding Simulator</h1>
+          <h1 class="header-title">Stochastic Modeling of Airline Cabin Boarding Efficiency</h1>
         </div>
 
         <div id="main-content">
           <p>
-            A discrete-time, agent-based simulation framework for studying commercial aircraft
-            boarding procedures. This project models passengers, aircraft geometry, overhead bins,
-            and movement constraints to support controlled experiments in boarding efficiency.
+            This project developed a stochastic cabin boarding simulator in Python to evaluate
+            boarding strategies across multiple aircraft configurations under realistic passenger
+            behavior. It combines Monte Carlo simulation with an agent-based representation of
+            aisle movement, seat assignments, and overhead-bin interactions.
           </p>
 
           <p>
@@ -37,26 +47,20 @@
             California, Berkeley (Fall 2025).
           </p>
 
-          <p>
-            <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank" rel="noopener" class="btn btn-primary">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-              </svg>
-              GitHub Repo
-            </a>
-          </p>
-
-          <p>
-            The simulator models aircraft boarding as a discrete-time, agent-based process with
-            passengers, seat assignments, aisle movement constraints, and overhead-bin interactions.
-            It supports controlled comparisons of boarding strategies and reports metrics such as
-            total boarding time, seat timing, and congestion.
-          </p>
-
-          <p>
-            For complete setup instructions, CLI usage, configuration options, and analysis outputs,
-            see the GitHub repository linked above.
-          </p>
+          <ul>
+            <li>
+              Modeled boarding as a discrete-time simulation with aisle blocking, passenger
+              sequencing, seat timing, and bin-use delays.
+            </li>
+            <li>
+              Benchmarked boarding policies using total boarding duration, congestion, and
+              passenger-level timing metrics.
+            </li>
+            <li>
+              Designed the simulator to support reproducible scenario experiments and sensitivity
+              analysis.
+            </li>
+          </ul>
 
           <p><b>Contributors:</b></p>
 
@@ -68,6 +72,7 @@
           </ul>
 
           <p>
+            <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repo</a>
             <a href="/projects/" class="btn btn-outline">Back to Projects</a>
           </p>
         </div>
