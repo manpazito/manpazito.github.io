@@ -2078,7 +2078,16 @@ a.btn.btn-outline:hover {
   gap: 16px;
 }
 
-.pdf-viewer-container {
+.document-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.pdf-viewer-container,
+.document-viewer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2089,7 +2098,8 @@ a.btn.btn-outline:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-#pdf-canvas-wrapper {
+#pdf-canvas-wrapper,
+#presentation-canvas-wrapper {
   width: 100%;
   max-width: 900px;
   display: flex;
@@ -2100,7 +2110,8 @@ a.btn.btn-outline:hover {
   overflow-x: auto;
 }
 
-#pdf-canvas {
+#pdf-canvas,
+#presentation-canvas {
   max-width: 100%;
   height: auto;
   border: 1px solid #e0e0e0;
@@ -2108,7 +2119,8 @@ a.btn.btn-outline:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.pdf-navigation {
+.pdf-navigation,
+.document-navigation {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2116,7 +2128,8 @@ a.btn.btn-outline:hover {
   width: 100%;
 }
 
-#page-info {
+#page-info,
+#slide-info {
   font-size: 14px;
   color: var(--text-muted);
   font-weight: 600;
@@ -2124,7 +2137,8 @@ a.btn.btn-outline:hover {
   text-align: center;
 }
 
-.pdf-nav-btn {
+.pdf-nav-btn,
+.document-nav-btn {
   padding: 10px 16px;
   background: var(--primary);
   color: #fff;
@@ -2136,37 +2150,44 @@ a.btn.btn-outline:hover {
   font-size: 14px;
 }
 
-.pdf-nav-btn:hover:not(:disabled) {
+.pdf-nav-btn:hover:not(:disabled),
+.document-nav-btn:hover:not(:disabled) {
   background: var(--primary-dark);
   box-shadow: 0 2px 8px rgba(200, 90, 58, 0.3);
 }
 
-.pdf-nav-btn:disabled {
+.pdf-nav-btn:disabled,
+.document-nav-btn:disabled {
   background: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
 @media (max-width: 768px) {
-  .pdf-viewer-container {
+  .pdf-viewer-container,
+  .document-viewer-container {
     padding: 16px;
   }
 
-  #pdf-canvas-wrapper {
+  #pdf-canvas-wrapper,
+  #presentation-canvas-wrapper {
     padding: 12px;
   }
 
-  .pdf-navigation {
+  .pdf-navigation,
+  .document-navigation {
     gap: 12px;
     flex-wrap: wrap;
   }
 
-  .pdf-nav-btn {
+  .pdf-nav-btn,
+  .document-nav-btn {
     padding: 8px 12px;
     font-size: 12px;
   }
 
-  #page-info {
+  #page-info,
+  #slide-info {
     font-size: 12px;
     min-width: auto;
   }
