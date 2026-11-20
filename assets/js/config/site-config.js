@@ -79,44 +79,39 @@
     ],
     projects: [
       {
-        slug: 'drone-battery',
-        label: 'Drone Battery',
-        href: '/projects/drone-battery/',
+        slug: 'drone-risk-allocation',
+        label: 'Risk-Constrained Drone Routing',
+        href: '/projects/drone-risk-allocation/',
+      },
+      {
+        slug: 'spectral-cvrp',
+        label: 'Spectral CVRP',
+        href: '/projects/spectral-cvrp/',
+      },
+      {
+        slug: 'i405-ramp-metering',
+        label: 'I-405 SB Ramp Metering',
+        href: '/projects/i405-ramp-metering/',
       },
       {
         slug: 'cvrp-ml',
-        label: 'CVRP ML',
+        label: 'CVRP Heuristics vs. ML',
         href: '/projects/cvrp-ml/',
       },
       {
-        slug: 'cal-transpo',
-        label: 'Cal Transpo Ops',
-        href: '/projects/cal-transpo/',
-      },
-      {
-        slug: 'ca-college-going-cep',
-        label: 'CA College-Going & CEP',
-        href: '/projects/ca-college-going-cep/',
+        slug: 'multimodal-bike-router',
+        label: 'Multimodal Bike Router',
+        href: '/projects/multimodal-bike-router/',
       },
       {
         slug: 'wind-turbine',
-        label: 'Wind Turbine',
+        label: 'Wind Turbine Blade Optimizer',
         href: '/projects/wind-turbine/',
       },
       {
         slug: 'plane-boarding',
-        label: 'Plane Boarding',
+        label: 'Airline Boarding Simulation',
         href: '/projects/plane-boarding/',
-      },
-      {
-        slug: '311-equity',
-        label: '311 Equity',
-        href: '/projects/311-equity/',
-      },
-      {
-        slug: 'predicting-homelessness',
-        label: 'Predicting Homelessness',
-        href: '/projects/predicting-homelessness/',
       },
     ],
     socialLinks: [

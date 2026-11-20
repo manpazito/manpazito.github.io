@@ -945,6 +945,15 @@ body {
   margin-top: 4px;
 }
 
+.projects-list-page #main-content a.btn,
+.projects-page #main-content a.btn-primary[href^="https://github.com/"] {
+  padding: 5px 14px;
+}
+
+.projects-page #main-content a.btn-primary:is([href^="https://github.com/"], [href^="https://arcg.is/"]) {
+  color: var(--bg);
+}
+
 /* Paragraphs */
 #main-content p {
   margin-top: 14px;

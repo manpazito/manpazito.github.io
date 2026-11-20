@@ -12,6 +12,21 @@
   </url>
 
   <url>
+    <loc>https://manpazito.github.io/projects/drone-risk-allocation/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/spectral-cvrp/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/i405-ramp-metering/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://manpazito.github.io/projects/drone-battery/</loc>
     <priority>0.7</priority>
   </url>
@@ -28,6 +43,11 @@
 
   <url>
     <loc>https://manpazito.github.io/projects/ca-college-going-cep/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/multimodal-bike-router/</loc>
     <priority>0.7</priority>
   </url>
 
