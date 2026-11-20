@@ -106,10 +106,10 @@
     ],
     socialLinks: [
       {
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/manpazito',
-        ariaLabel: 'LinkedIn',
-        icon: LINKEDIN_ICON,
+        label: 'Contact',
+        href: 'mailto:manpazito@ucla.edu',
+        icon:
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
       },
       {
         label: 'GitHub',
@@ -118,10 +118,10 @@
         icon: GITHUB_ICON,
       },
       {
-        label: 'Contact',
-        href: 'mailto:manpazito@ucla.edu',
-        icon:
-          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/manpazito',
+        ariaLabel: 'LinkedIn',
+        icon: LINKEDIN_ICON,
       },
     ],
     cv: {

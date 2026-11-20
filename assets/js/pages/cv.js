@@ -2,7 +2,7 @@
   'use strict';
 
   var cvConfig = (window.SiteConfig || {}).cv || {};
-  var viewer = document.getElementById('pdf-viewer-container');
+  var canvasWrapper = document.getElementById('pdf-canvas-wrapper');
   var canvas = document.getElementById('pdf-canvas');
   var previous = document.getElementById('prev-page');
   var next = document.getElementById('next-page');
@@ -31,7 +31,7 @@
       if (request !== version) return;
       current.textContent = pageNumber;
       total.textContent = pdf.numPages;
-      viewer.hidden = false;
+      canvasWrapper.hidden = false;
       status.textContent = '';
       previous.disabled = pageNumber === 1;
       next.disabled = pageNumber === pdf.numPages;
@@ -49,11 +49,13 @@
       if (index === Number(resume)) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
+    document.getElementById('open-pdf').href = url;
     download.href = url;
     download.download = 'ManuelMartinezGarcia_' + name + '.pdf';
-    download.textContent = 'Download ' + name + ' (PDF)';
+    download.title = 'Download ' + name + ' (PDF)';
+    download.setAttribute('aria-label', download.title);
     previous.disabled = next.disabled = true;
-    if (viewer.hidden) status.textContent = 'Loading ' + name + '…';
+    if (canvasWrapper.hidden) status.textContent = 'Loading ' + name + '…';
     if (rendering) rendering.cancel();
     if (loading) loading.destroy().catch(function () {});
 

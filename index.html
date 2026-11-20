@@ -50,11 +50,14 @@
 
     <main id="content">
       <div class="intro-section">
-        <h1 class="header-title">Manuel A. Martínez García</h1>
+        <h1 class="header-title">Manuel A. <br class="mobile-name-break" />Martínez García</h1>
 
         <div class="intro">
           <div class="intro-photo">
-            <img src="/assets/img/me.jpg" alt="Photo of Manuel Martínez García" class="profile-img" />
+            <picture>
+              <source media="(max-width: 800px)" srcset="/assets/img/me-mobile.webp" />
+              <img src="/assets/img/me.jpg" alt="Photo of Manuel Martínez García" class="profile-img" />
+            </picture>
           </div>
           <div class="intro-text">
             <p>
@@ -91,24 +94,22 @@
         </p>
 
         <div class="center section-spaced">
-          <img src="/assets/img/cal_ite_team_photo.jpg" alt="UC Berkeley Transportation Team at MidPac 2025 Conference"
+          <img loading="lazy" src="/assets/img/cal_ite_team_photo.jpg" alt="UC Berkeley Transportation Team at MidPac 2025 Conference"
             class="featured-image" />
           <p class="image-caption">With the UC Berkeley Transportation Team at MidPac 2025</p>
         </div>
 
-        <h2>Research &amp; Funding</h2>
-
-        <h3>Funding</h3>
+        <h2>Funding</h2>
         <ul>
-          <li><b>California Graduate Scholar Award (2026)</b> — Support for graduate studies at UCLA.</li>
-          <li><b>Firebaugh Research Scholarship (2025)</b> — Support for academic-year research.</li>
-          <li><b>Monarch Research Scholarship (2024, 2025)</b> — Support for summer research.</li>
+          <li><b>California Graduate Scholar Award and Irma Polaski Fellowship (2026)</b> – Jointly provide full funding for my master’s program at UCLA, including a stipend.</li>
+          <li><b>Firebaugh Research Scholarship (2025)</b> – Awarded to support academic-year research</li>
+          <li><b>Monarch Research Scholarship (2024, 2025)</b> – Awarded for two consecutive years to support summer research initiatives</li>
         </ul>
 
-        <h3>Research</h3>
+        <h2>Research</h2>
 
+        <h3>HUMAN Lab at UCLA</h3>
         <p>
-          <b class="section-subheading">HUMAN Lab · UCLA</b><br />
           Graduate Student Researcher, June 2026–present.<br />
           My current research is
           <a href="/projects/drone-risk-allocation/">Risk-Constrained Dynamic Task Allocation and Routing</a>.
@@ -116,8 +117,8 @@
           while accounting for battery reserves, deadlines, task reliability, and collision risk.
         </p>
 
+        <h3>Industrial Engineering &amp; Operations Research at UC Berkeley</h3>
         <p>
-          <b class="section-subheading">Industrial Engineering &amp; Operations Research · UC Berkeley</b><br />
           Supervised by <a href="https://yanchiwei.github.io/">Prof. Chiwei Yan</a>.
         </p>
 
@@ -146,7 +147,7 @@
 
         <p class="hanging-indent research-entry">
           <span>
-            <b class="section-subheading">CITRIS &amp; the Banatao Institute · UC Berkeley</b><br />
+            <b class="section-subheading">CITRIS &amp; the Banatao Institute at UC Berkeley</b><br />
             <b>Cooperative Congestion Management</b> · May–August 2025<br />
             Supervised by <a href="https://its.berkeley.edu/people/jonathan-lee">Dr. Jonathan Lee</a>.
             Assessed adoption potential and modeled fuel savings, emissions reductions, and
