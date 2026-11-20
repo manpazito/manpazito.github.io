@@ -841,7 +841,8 @@ body {
   overflow: hidden;
   background-image: url('/assets/img/transit-photo.jpg');
   background-size: cover;
-  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-position: center 95%;
   border-bottom: 6px solid var(--primary);
 }
 
@@ -859,17 +860,6 @@ body {
 .intro-section>* {
   position: relative;
   z-index: 1;
-}
-
-/* Offset header background for specific pages */
-.intro-section.header-offset {
-  background-position: center 210px;
-}
-
-/* Page-specific hero framing for long CA College-Going title */
-.ca-college-going-page .intro-section.header-offset {
-  background-position: center 93.5%;
-  background-repeat: no-repeat;
 }
 
 .header-title {
@@ -900,7 +890,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  align-items: center;
+  align-items: flex-start;
   padding: 16px 0;
   margin-bottom: 0;
   background: transparent;
@@ -910,9 +900,14 @@ body {
 
 .intro-text {
   flex: 1 1 300px;
+  padding-top: 8px;
   font-size: 17px;
   line-height: 1.8;
   color: var(--transit-light);
+}
+
+.intro-text p {
+  margin: 0;
 }
 
 .intro-greeting {
@@ -1307,26 +1302,16 @@ a.btn:hover {
     display: initial;
   }
 
-  .intro-section.header-offset {
-    background-position: center;
-  }
-
-  .ca-college-going-page .intro-section.header-offset {
-    background-position: center;
-  }
-
   .intro {
     flex-direction: column;
+    align-items: center;
     text-align: center;
     gap: 16px;
   }
 
   .intro-text {
     flex: 0 1 auto;
-  }
-
-  .intro-text p {
-    margin: 0;
+    padding-top: 0;
   }
 
   .projects-list-page #main-content a.btn,
