@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV | Manuel Martinez Garcia</title>
-    <meta name="description" content="Curriculum vitae of Manuel Martinez Garcia, a UCLA Transportation Engineering graduate student and researcher." />
+    <title>CV / Resume | Manuel Martinez Garcia</title>
+    <meta name="description" content="Curriculum vitae and resume of Manuel Martinez Garcia, a UCLA Transportation Engineering graduate student and researcher." />
     <meta name="author" content="Manuel Martinez Garcia" />
     <!-- Open Graph -->
-    <meta property="og:title" content="CV | Manuel Martinez Garcia" />
-    <meta property="og:description" content="Curriculum vitae of Manuel Martinez Garcia, a UCLA Transportation Engineering graduate student and researcher." />
+    <meta property="og:title" content="CV / Resume | Manuel Martinez Garcia" />
+    <meta property="og:description" content="Curriculum vitae and resume of Manuel Martinez Garcia, a UCLA Transportation Engineering graduate student and researcher." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/cv/" />
     <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
@@ -25,15 +25,21 @@
 
       <main id="content">
         <div class="intro-section header-offset">
-          <h1 class="header-title">My CV</h1>
+          <h1 class="header-title">CV / Resume</h1>
         </div>
 
         <div id="main-content">
           <div class="cv-controls">
-            <button id="download-btn" class="btn btn-primary">📄 Download CV (PDF)</button>
+            <nav class="cv-switch" aria-label="Choose a document">
+              <a id="cv-link" href="/cv/" aria-current="page">CV</a>
+              <a id="resume-link" href="/cv/?document=resume">Resume</a>
+            </nav>
+            <a id="download-btn" class="btn btn-primary"
+              href="/assets/cv/ManuelMartinezGarciaCV2026.pdf" download="ManuelMartinezGarcia_CV.pdf">Download CV (PDF)</a>
           </div>
 
-          <div id="pdf-viewer-container" class="pdf-viewer-container">
+          <p id="pdf-status" role="status"></p>
+          <div id="pdf-viewer-container" class="pdf-viewer-container" hidden>
             <div id="pdf-canvas-wrapper">
               <canvas id="pdf-canvas"></canvas>
             </div>

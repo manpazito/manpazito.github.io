@@ -10,11 +10,11 @@ Live at: https://manpazito.github.io
 /               - Home (about, research)
 /projects/      - Engineering and research projects
 /projects/*/    - Individual project detail pages
-/cv/            - Resume (PDF viewer)
+/cv/            - CV and resume (PDF viewer)
 /contact/       - Contact form
 /assets/css/    - Global stylesheet
 /assets/img/    - Images and icons
-/assets/cv/     - Resume PDF
+/assets/cv/     - CV and resume PDFs
 /sitemap.xml    - Search crawler URL index
 /robots.txt     - Crawler directives + sitemap location
 /_config.yml    - GitHub Pages/Jekyll site config
@@ -35,6 +35,14 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## Updating the CV and resume
+
+Run `./update-resume.sh` to copy `Manuel-Martinez-Garcia-CV.pdf` and
+`Manuel-Martinez-Garcia-Resume.pdf` from `../../Documents/resumes` relative to the
+repository. The script uses Poppler’s `pdfinfo` to check both files before
+replacing the site copies. Pass a source directory as the first argument to override
+the default.
 
 ## Deployment
 

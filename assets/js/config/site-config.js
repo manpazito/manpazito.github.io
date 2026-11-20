@@ -58,7 +58,7 @@
       },
       {
         key: 'cv',
-        label: 'CV',
+        label: 'CV / Resume',
         href: '/cv/',
         indicatorClass: 'doc-verified',
         indicator: {
@@ -137,9 +137,7 @@
       toastDurationMs: 4000,
     },
     cv: {
-      pdfUrl: '/assets/cv/ManuelMartinezGarciaCV2026.pdf',
       pdfWorkerUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
-      downloadFilename: 'ManuelMartinezGarcia_CV.pdf',
     },
   };
 })(window);
