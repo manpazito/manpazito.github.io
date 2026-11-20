@@ -4,33 +4,250 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi-modal Bike Router For First-/Last-Mile Transit Access | Manuel Martinez Garcia</title>
-    <meta name="description" content="A Python router for bicycle connections to public transit." />
+    <meta
+      name="description"
+      content="A schedule-aware Los Angeles bicycle-to-bus route-planning prototype that compares fast and lower risk-weighted first-/last-mile transit access itineraries."
+    />
     <meta name="author" content="Manuel Martinez Garcia" />
     <meta property="og:title" content="Multi-modal Bike Router For First-/Last-Mile Transit Access | Manuel Martinez Garcia" />
-    <meta property="og:description" content="A Python router for bicycle connections to public transit." />
+    <meta
+      property="og:description"
+      content="A schedule-aware Los Angeles bicycle-to-bus route-planning prototype that makes first-/last-mile time and cycling-infrastructure tradeoffs visible."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/projects/multimodal-bike-router/" />
-    <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
+    <meta
+      property="og:image"
+      content="https://manpazito.github.io/assets/img/projects/multimodal-route-planner/fast-safe-route-maps.png"
+    />
     <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
 
-  <body class="projects-page" data-page="projects" data-project="multimodal-bike-router">
+  <body class="projects-page multimodal-bike-router-page" data-page="projects" data-project="multimodal-bike-router">
     <div id="page">
       <aside id="sidebar"></aside>
 
       <main id="content">
         <div class="intro-section header-offset">
+          <p class="project-eyebrow">Transportation systems · Routing · Python</p>
           <h1 class="header-title">Multi-modal Bike Router For First-/Last-Mile Transit Access</h1>
+          <p class="project-hero-copy">
+            A schedule-aware bicycle-to-bus prototype for making first-/last-mile tradeoffs
+            explicit—not just returning the fastest path.
+          </p>
         </div>
 
         <div id="main-content">
-          <p>A Python router for bicycle connections to public transit.</p>
+          <section class="project-lead" aria-labelledby="project-overview">
+            <div>
+              <p class="project-kicker">Los Angeles direct-bus prototype</p>
+              <h2 id="project-overview">A better question than “what is the fastest route?”</h2>
+              <p>
+                First- and last-mile access can determine whether transit is practical, yet a
+                fastest-path result often hides the bicycle conditions required to reach the bus.
+                This project combines scheduled transit feasibility with bicycle-network routing
+                to return two usable itineraries: <strong>Fast</strong>, which minimizes final
+                arrival time, and <strong>Safe</strong>, which prioritizes lower
+                risk-weighted bicycle exposure while staying within a configurable arrival-time
+                budget.
+              </p>
+              <p>
+                The result is a compact decision tool for comparing the time, waiting, transfer
+                points, and cycling-infrastructure implications of a complete trip.
+              </p>
+              <p class="project-actions">
+                <a
+                  href="https://github.com/manpazito/multimodal-route-planner"
+                  class="btn btn-primary github-button"
+                  target="_blank"
+                  rel="noopener"
+                ><img src="/assets/img/icons/github.svg" alt="" aria-hidden="true" class="repo-icon" />View the code on GitHub</a>
+                <a href="#example" class="btn btn-outline">See the worked example</a>
+              </p>
+            </div>
 
-          <p>The router combines OpenStreetMap, GTFS, and bicycle infrastructure data. Its configurable routing cost balances travel time and cycling safety while limiting detours.</p>
+            <aside class="project-note" aria-label="Project scope">
+              <figure class="project-context-photo">
+                <img
+                  src="/assets/img/photos/bike-on-bus.jpg"
+                  alt="A bicycle secured on the front rack of a Los Angeles Metro Local bus."
+                />
+                <figcaption>Bike + bus in practice: the connection this planner is built to support.</figcaption>
+              </figure>
+              <p class="project-note-label">Prototype scope</p>
+              <p>
+                Bicycle access + one scheduled, directionally feasible <strong>direct bus</strong>
+                trip + bicycle egress.
+              </p>
+              <p class="project-note-small">
+                Built as experimental planning software, not turn-by-turn navigation or safety
+                advice.
+              </p>
+            </aside>
+          </section>
 
-          <p>
+          <div class="project-summary-grid project-summary-grid--four" aria-label="Project at a glance">
+            <article class="project-summary-card">
+              <h3>Place</h3>
+              <p>Los Angeles, using local bikeway data and LA Metro/LADOT GTFS snapshots.</p>
+            </article>
+            <article class="project-summary-card">
+              <h3>Decision</h3>
+              <p>Compare earliest arrival against a safer bicycle-access alternative.</p>
+            </article>
+            <article class="project-summary-card">
+              <h3>Routing engine</h3>
+              <p>OSMnx + NetworkX weighted graphs, GeoPandas, Shapely, and Pandas.</p>
+            </article>
+            <article class="project-summary-card">
+              <h3>Interface</h3>
+              <p>Python API, reproducible notebook, static figures, and a local Streamlit demo.</p>
+            </article>
+          </div>
+
+          <section id="example" class="section-spaced" aria-labelledby="example-heading">
+            <div class="section-subheading-row">
+              <p class="project-kicker">Worked example</p>
+              <h2 id="example-heading" class="section-subheading">North Hollywood to UCLA: the same bus, two different bicycle experiences</h2>
+            </div>
+            <p>
+              For a requested <strong>8:00 AM departure on June 24, 2026</strong>, the planner
+              found two viable itineraries using LA Metro bus 761. The Safe option arrived only
+              6.5 minutes later than Fast, but substantially changed the bicycle portion of the
+              trip: it more than doubled Class I/IV coverage and reduced the configured exposure
+              score by over half for just 0.09 additional bicycle miles.
+            </p>
+
+            <div class="route-metrics" aria-label="Worked example metrics">
+              <div><strong>85.4 min</strong><span>Fast total journey</span></div>
+              <div><strong>91.9 min</strong><span>Safe total journey</span></div>
+              <div><strong>33.4%</strong><span>Safe Class I / IV coverage</span></div>
+              <div><strong>−54%</strong><span>Risk-weighted exposure</span></div>
+            </div>
+
+            <figure class="project-figure project-figure--hero">
+              <img
+                src="/assets/img/projects/multimodal-route-planner/fast-safe-route-maps.png"
+                alt="Side-by-side maps comparing fast and safe bicycle-to-bus itineraries from North Hollywood to UCLA. The safe option uses more Class I paths and Class IV protected lanes."
+                class="featured-image"
+              />
+              <figcaption class="image-caption">
+                Fast and Safe itineraries selected for the recorded North Hollywood–UCLA request.
+                Colored bicycle links show mapped facility classes; dashed black links show the scheduled bus leg.
+              </figcaption>
+            </figure>
+
+            <div class="project-comparison" role="region" aria-label="Fast and Safe itinerary comparison">
+              <div class="project-comparison-head project-comparison-row">
+                <span>Option</span><span>Arrival</span><span>Journey</span><span>Bike distance</span><span>Class I / IV</span><span>Exposure score</span>
+              </div>
+              <div class="project-comparison-row">
+                <strong>Fast</strong><span>9:25 AM</span><span>85.4 min</span><span>5.74 mi</span><span>14.7%</span><span>7,263 m</span>
+              </div>
+              <div class="project-comparison-row project-comparison-row--safe">
+                <strong>Safe</strong><span>9:31 AM</span><span>91.9 min</span><span>5.83 mi</span><span>33.4%</span><span>3,336 m</span>
+              </div>
+            </div>
+            <p class="comparison-footnote">
+              Exposure is a configurable, risk-weighted equivalent-meter score—not a measured
+              crash-risk estimate. Lower is better within this routing model.
+            </p>
+          </section>
+
+          <section class="section-spaced" aria-labelledby="method-heading">
+            <div class="section-subheading-row">
+              <p class="project-kicker">Method</p>
+              <h2 id="method-heading" class="section-subheading">Schedule feasibility meets street-level tradeoffs</h2>
+            </div>
+            <div class="method-grid">
+              <article>
+                <span class="method-step">01</span>
+                <h3>Find reachable stops</h3>
+                <p>
+                  Geocode the endpoints, identify stops within configurable bicycle radii, and
+                  construct access and egress bicycle graphs from OpenStreetMap.
+                </p>
+              </article>
+              <article>
+                <span class="method-step">02</span>
+                <h3>Respect the timetable</h3>
+                <p>
+                  Search GTFS calendars, exceptions, stop times, boarding rules, direction, and
+                  a boarding buffer to find scheduled direct-bus trips that can actually be reached.
+                </p>
+              </article>
+              <article>
+                <span class="method-step">03</span>
+                <h3>Score bicycle links</h3>
+                <p>
+                  Overlay City of Los Angeles bikeway classes and residential-street tags onto
+                  network edges, then assign configurable routing costs to each link.
+                </p>
+              </article>
+              <article>
+                <span class="method-step">04</span>
+                <h3>Return a meaningful pair</h3>
+                <p>
+                  Select Fast by final arrival time; select Safe by lowest bicycle exposure among
+                  alternatives that arrive within the allowed delay—10 minutes by default.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-spaced" aria-labelledby="tradeoffs-heading">
+            <div class="section-subheading-row">
+              <p class="project-kicker">What the comparison reveals</p>
+              <h2 id="tradeoffs-heading" class="section-subheading">The “safer” route is not simply a longer route</h2>
+            </div>
+            <p>
+              Both returned itineraries have almost identical bicycle mileage. The difference is
+              where that mileage occurs: the Safe option shifts distance toward protected
+              infrastructure and residential streets, changing the exposure profile without
+              demanding a large detour. The time chart also makes clear whether the added minutes
+              come from cycling, waiting, transit travel, or egress.
+            </p>
+            <div class="project-figure-grid">
+              <figure class="project-figure">
+                <img
+                  src="/assets/img/projects/multimodal-route-planner/bike-tradeoffs.png"
+                  alt="Charts comparing bicycle distance, preferred-network coverage, and risk-weighted exposure for fast and safe itineraries."
+                  class="project-preview-thumb"
+                />
+                <figcaption class="image-caption">Network coverage and exposure comparison across the two returned options.</figcaption>
+              </figure>
+              <figure class="project-figure">
+                <img
+                  src="/assets/img/projects/multimodal-route-planner/journey-time-breakdown.png"
+                  alt="Stacked horizontal bars breaking fast and safe journey times into bicycle access, initial wait, bus travel, and bicycle egress."
+                  class="project-preview-thumb"
+                />
+                <figcaption class="image-caption">Complete journey time, decomposed into access, wait, in-vehicle, and egress time.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="section-spaced project-limits" aria-labelledby="limits-heading">
+            <div>
+              <p class="project-kicker">Responsible scope</p>
+              <h2 id="limits-heading" class="section-subheading">Designed to be inspectable, not overconfident</h2>
+              <p>
+                The v0.1 prototype intentionally focuses on a narrow, auditable problem. It uses
+                point-in-time data snapshots for reproducibility and separates code licensing
+                from source-data terms and attribution.
+              </p>
+            </div>
+            <ul>
+              <li>No transfers, rail, walking legs, bike share, fares, accessibility constraints, or real-time arrivals.</li>
+              <li>“Safe” represents adjustable infrastructure and residential-street preferences, not a guarantee of safety.</li>
+              <li>GTFS refreshes are explicit and reviewable; route requests do not silently change local transit data.</li>
+            </ul>
+          </section>
+
+          <p class="project-closing-actions">
+            <a href="https://github.com/manpazito/multimodal-route-planner" class="btn btn-primary github-button" target="_blank" rel="noopener"><img src="/assets/img/icons/github.svg" alt="" aria-hidden="true" class="repo-icon" />Explore the repository</a>
             <a href="/projects/" class="btn btn-outline">Back to Projects</a>
           </p>
         </div>

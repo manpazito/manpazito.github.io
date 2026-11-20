@@ -76,4 +76,14 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://manpazito.github.io/projects/calyber/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://manpazito.github.io/projects/cooperative-congestion/</loc>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

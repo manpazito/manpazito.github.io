@@ -6,17 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CVRP Heuristics vs Machine Learning Benchmarking | Manuel Martinez Garcia</title>
   <meta name="description"
-    content="Benchmarking classical heuristics against learning-based methods for the Capacitated Vehicle Routing Problem." />
+    content="Benchmarking classical heuristics, metaheuristics, and machine-learning approaches for the Capacitated Vehicle Routing Problem." />
   <meta name="author" content="Manuel Martinez Garcia" />
   <meta property="og:title" content="CVRP Heuristics vs Machine Learning Benchmarking | Manuel Martinez Garcia" />
   <meta property="og:description"
-    content="Benchmarking classical heuristics against learning-based methods for the Capacitated Vehicle Routing Problem." />
+    content="Benchmarking classical heuristics, metaheuristics, and machine-learning approaches for the Capacitated Vehicle Routing Problem." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://manpazito.github.io/projects/cvrp-ml/" />
-  <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
+  <meta property="og:image" content="https://manpazito.github.io/assets/img/logos/firebaugh-logo.png" />
   <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script defer src="/assets/js/lib/pdfjs/pdf.min.js"></script>
 </head>
 
 <body class="projects-page" data-page="projects" data-project="cvrp-ml">
@@ -30,10 +31,58 @@
 
       <div id="main-content">
         <p>
-          Benchmarking classical heuristics against learning-based methods for the Capacitated
-          Vehicle Routing Problem, with an emphasis on performance, scalability, and
-          generalization. Supported by the 2025 Firebaugh Research Scholarship.
+          This UC Berkeley IEOR research project, supervised by Prof. Chiwei Yan, compared
+          classical heuristics, metaheuristics, and machine-learning approaches for the
+          Capacitated Vehicle Routing Problem (CVRP). The work was supported by the Marco
+          Antonio Firebaugh Scholars Program.
         </p>
+
+        <ul>
+          <li>
+            Developed a modular benchmarking framework across diverse CVRP instance sets.
+          </li>
+          <li>
+            Implemented constructive heuristics, local search methods, and metaheuristic solvers
+            with standardized metrics for cost, runtime, and solution quality.
+          </li>
+          <li>
+            Identified tradeoffs between solution quality and computational cost, including where
+            ML-based approaches scale well and where training overhead becomes important.
+          </li>
+          <li>
+            Proposed a hybrid "Smarter Ants" framework combining ant colony optimization with
+            dynamic problem decomposition through virtual depots.
+          </li>
+        </ul>
+
+        <p>
+          The project sharpened my interest in routing research that treats algorithmic
+          performance as a practical systems question: not just whether a method can find good
+          routes, but when it is worth the computational complexity.
+        </p>
+
+        <p>
+          <strong>Project presentation:</strong> an overview of the machine-learning approaches,
+          benchmarking framework, and the proposed Smarter Ants hybrid method.
+        </p>
+
+        <section id="presentation-viewer-container" class="pdf-viewer-container"
+          aria-label="Machine Learning Approaches to the CVRP presentation">
+          <div id="presentation-canvas-wrapper">
+            <canvas id="presentation-canvas"></canvas>
+          </div>
+          <div class="pdf-navigation" aria-label="Presentation navigation">
+            <button id="prev-slide" class="pdf-nav-btn" type="button">← Previous</button>
+            <span id="slide-info">Slide <span id="current-slide">1</span> of <span id="total-slides">17</span></span>
+            <button id="next-slide" class="pdf-nav-btn" type="button">Next →</button>
+          </div>
+          <div class="pdf-actions">
+            <a href="/assets/presentations/cvrp-machine-learning-approaches.pptx" class="btn"
+              download>Download PowerPoint Presentation (.pptx)</a>
+            <a href="/assets/presentations/cvrp-machine-learning-approaches.pdf" class="btn"
+              download>Download Presentation (PDF)</a>
+          </div>
+        </section>
 
         <p>
           <a href="https://github.com/manpazito/cvrp-ml-tradeoffs" target="_blank" rel="noopener"
@@ -45,18 +94,6 @@
             </svg>
             GitHub Repo
           </a>
-        </p>
-
-        <p>
-          For full methodology, implementation details, and results, see the GitHub repository
-          linked above.
-        </p>
-
-        <p>
-          <i>Expected project-page deliverable: late April / early May.</i>
-        </p>
-
-        <p>
           <a href="/projects/" class="btn btn-outline">Back to Projects</a>
         </p>
       </div>
@@ -68,6 +105,7 @@
   <script defer src="/assets/js/config/site-config.js"></script>
   <script defer src="/assets/js/utils/nav-lottie.js"></script>
   <script defer src="/assets/js/layout/shell.js"></script>
+  <script defer src="/assets/js/pages/cvrp-presentation.js"></script>
 </body>
 
 </html>

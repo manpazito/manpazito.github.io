@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/fonts/inter-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/fonts/inter-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/assets/fonts/libre-baskerville-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/assets/fonts/libre-baskerville-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Base page style - Minimalist Transit Theme */
 :root {
   --primary: #c85a3a;
@@ -20,12 +56,23 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6,
+.intro-greeting,
+.section-subheading,
+.projects-list-page #main-content p > b:first-child {
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 .skip-link {
@@ -907,6 +954,7 @@ body {
 }
 
 .intro-text p {
+  width: fit-content;
   margin: 0;
 }
 
@@ -915,6 +963,9 @@ body {
 }
 
 .intro-pronouns {
+  display: block;
+  margin-bottom: -8px;
+  border-bottom: 1px solid #fff;
   font-size: 18px;
   color: #ffffff;
   font-weight: 600;
@@ -1314,6 +1365,10 @@ a.btn:hover {
     padding-top: 0;
   }
 
+  .intro-text p {
+    margin-inline: auto;
+  }
+
   .projects-list-page #main-content a.btn,
   .projects-page #main-content a.btn-primary[href^="https://github.com/"],
   .cv-controls a,
@@ -1483,6 +1538,361 @@ a.btn.btn-outline:hover {
   font-style: italic;
 }
 
+.project-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+
+.project-summary-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.project-summary-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--transit-dark);
+}
+
+.project-summary-card p {
+  margin: 0;
+}
+
+.project-figure {
+  margin: 22px 0;
+}
+
+.project-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-figure-grid .project-figure:last-child {
+  grid-column: 1 / -1;
+}
+
+/* Multimodal Route Planner case study */
+.project-eyebrow,
+.project-kicker {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.project-eyebrow {
+  color: #f7d5ca;
+}
+
+.project-hero-copy {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: #ffffff;
+  font-size: 1.12rem;
+  line-height: 1.55;
+}
+
+.project-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.38fr);
+  gap: 28px;
+  align-items: start;
+  margin: 32px 0 22px;
+}
+
+.project-lead h2 {
+  margin: 0 0 12px;
+  color: var(--transit-dark);
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  line-height: 1.18;
+}
+
+.project-actions,
+.project-closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px !important;
+}
+
+.project-note {
+  border: 1px solid #ded5d0;
+  border-top: 3px solid var(--primary-light);
+  padding: 20px;
+  background: #fcfbfa;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.045);
+}
+
+.project-context-photo {
+  margin: -20px -20px 18px;
+  overflow: hidden;
+  background: var(--transit-dark);
+}
+
+.project-context-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 35% center;
+}
+
+.project-context-photo figcaption {
+  padding: 9px 12px 10px;
+  color: #f7f4f2;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.project-note p {
+  margin: 0 0 12px;
+  line-height: 1.55;
+}
+
+.project-note p:last-child {
+  margin-bottom: 0;
+}
+
+.project-note-label {
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-note-small,
+.comparison-footnote {
+  color: var(--text-muted);
+  font-size: 0.88rem !important;
+}
+
+.project-summary-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-summary-grid--four .project-summary-card {
+  min-height: 105px;
+  border-left-width: 3px;
+  background: #fcfcfb;
+  box-shadow: none;
+}
+
+.route-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 22px 0;
+  overflow: hidden;
+  background: #fcfcfb;
+  border: 1px solid var(--border);
+}
+
+.route-metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 15px 16px;
+  background: transparent;
+  border-right: 1px solid var(--border);
+}
+
+.route-metrics > div:last-child {
+  border-right: 0;
+}
+
+.route-metrics strong {
+  color: #8e4f3b;
+  font-size: 1.24rem;
+  line-height: 1.2;
+}
+
+.route-metrics span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.project-figure--hero {
+  margin-top: 28px;
+}
+
+.multimodal-bike-router-page .project-figure-grid .project-figure:last-child {
+  grid-column: auto;
+}
+
+.project-comparison {
+  margin: 26px 0 0;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.project-comparison-row {
+  display: grid;
+  grid-template-columns: 1.1fr repeat(5, minmax(92px, 1fr));
+  min-width: 650px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-comparison-row:last-child {
+  border-bottom: 0;
+}
+
+.project-comparison-row > * {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+}
+
+.project-comparison-head {
+  background: #4d413c;
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-comparison-row--safe {
+  background: #f8fbf8;
+}
+
+.project-comparison-row--safe strong {
+  color: #14733a;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.method-grid article {
+  position: relative;
+  padding: 18px 18px 16px 68px;
+  border: 1px solid var(--border);
+  background: #fcfcfb;
+}
+
+.method-grid h3 {
+  margin: 0 0 6px;
+  color: var(--transit-dark);
+  font-size: 1.08rem;
+}
+
+.method-grid p {
+  margin: 0 !important;
+  font-size: 0.93rem !important;
+  line-height: 1.65 !important;
+}
+
+.method-step {
+  position: absolute;
+  top: 19px;
+  left: 18px;
+  color: var(--primary);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.project-limits {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 28px;
+  padding: 26px 28px;
+  border-left: 3px solid var(--primary-light);
+  background: #f7f6f4;
+}
+
+.project-limits .section-subheading {
+  margin-top: 0;
+}
+
+.project-limits ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.project-limits li + li {
+  margin-top: 10px;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.github-button .repo-icon {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 900px) {
+  .project-summary-grid,
+  .project-figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-figure-grid .project-figure:last-child {
+    grid-column: auto;
+  }
+
+  .project-summary-grid--four,
+  .route-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-metrics > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .route-metrics > div:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+
+  .project-lead,
+  .project-limits {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+    .project-hero-copy {
+    font-size: 1rem;
+  }
+
+  .route-metrics,
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-metrics > div {
+    border-right: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .route-metrics > div:first-child {
+    border-top: 0;
+  }
+
+  .project-limits {
+    padding: 20px;
+  }
+}
+
 /* PDF Viewer Styles */
 .cv-controls {
   display: flex;
@@ -1567,7 +1977,8 @@ a.btn.btn-outline:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-#pdf-canvas-wrapper {
+#pdf-canvas-wrapper,
+#presentation-canvas-wrapper {
   width: 100%;
   max-width: 900px;
   display: flex;
@@ -1577,7 +1988,8 @@ a.btn.btn-outline:hover {
   overflow-x: auto;
 }
 
-#pdf-canvas {
+#pdf-canvas,
+#presentation-canvas {
   max-width: 100%;
   height: auto;
   border: 1px solid #e0e0e0;
@@ -1593,7 +2005,8 @@ a.btn.btn-outline:hover {
   width: 100%;
 }
 
-#page-info {
+#page-info,
+#slide-info {
   font-size: 14px;
   font-weight: 600;
   min-width: 120px;
@@ -1632,7 +2045,8 @@ a.btn.btn-outline:hover {
     padding: 8px;
   }
 
-  #pdf-canvas-wrapper {
+  #pdf-canvas-wrapper,
+  #presentation-canvas-wrapper {
     padding: 0;
   }
 
@@ -1646,7 +2060,8 @@ a.btn.btn-outline:hover {
     font-size: 12px;
   }
 
-  #page-info {
+  #page-info,
+  #slide-info {
     font-size: 12px;
     min-width: auto;
   }
