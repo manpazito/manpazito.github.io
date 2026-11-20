@@ -11,7 +11,6 @@ Live at: https://manpazito.github.io
 /projects/      - Engineering and research projects
 /projects/*/    - Individual project detail pages
 /cv/            - CV and resume (PDF viewer)
-/contact/       - Contact form
 /assets/css/    - Global stylesheet
 /assets/img/    - Images and icons
 /assets/cv/     - CV and resume PDFs
@@ -53,5 +52,5 @@ Push to `main` to deploy via GitHub Pages.
 - SEO metadata and Open Graph tags are set per page.
 - JSON-LD Person schema is included on the homepage.
 - PDF viewer on the CV page uses PDF.js.
-- Contact form is handled via Formspree with reCAPTCHA v3.
+- The sidebar Contact link opens an email draft.
 - When adding/removing pages, keep `sitemap.xml` in sync.

@@ -66,16 +66,6 @@
           src: '/assets/img/icons/resume.json',
         },
       },
-      {
-        key: 'contact',
-        label: 'Contact',
-        href: '/contact/',
-        indicatorClass: 'contact-icon',
-        indicator: {
-          type: 'lottie',
-          src: '/assets/img/icons/contact.json',
-        },
-      },
     ],
     projects: [
       {
@@ -127,15 +117,13 @@
         ariaLabel: 'GitHub',
         icon: GITHUB_ICON,
       },
+      {
+        label: 'Contact',
+        href: 'mailto:manpazito@ucla.edu',
+        icon:
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+      },
     ],
-    contact: {
-      email: 'manpazito@ucla.edu',
-      recaptchaSiteKey: '6LeSu3QsAAAAAG4NmlTL3GkFBmFfikYrCcdcyYHX',
-      formspreeEndpoint: 'https://formspree.io/f/xnjbonvv',
-      submitCooldownMs: 60000,
-      maxSubmissionsPerHour: 10,
-      toastDurationMs: 4000,
-    },
     cv: {
       pdfWorkerUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
     },

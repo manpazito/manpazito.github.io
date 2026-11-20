@@ -28,9 +28,6 @@
     if (pathname.indexOf('/cv/') === 0) {
       return 'cv';
     }
-    if (pathname.indexOf('/contact/') === 0) {
-      return 'contact';
-    }
     return '';
   }
 
@@ -121,7 +118,9 @@
           return (
             '<a href="' +
             escapeHtml(link.href) +
-            '" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="' +
+            '" class="social-link"' +
+            (link.href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener noreferrer"') +
+            ' aria-label="' +
             escapeHtml(link.ariaLabel || link.label || '') +
             '">' +
             (link.icon || '') +
