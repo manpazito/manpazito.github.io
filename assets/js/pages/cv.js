@@ -4,10 +4,10 @@
   var siteConfig = window.SiteConfig || {};
   var cvConfig = siteConfig.cv || {};
 
-  var pdfUrl = cvConfig.pdfUrl || '/assets/cv/ManuelMartinezGarciaResume2026.pdf';
+  var pdfUrl = cvConfig.pdfUrl || '/assets/cv/ManuelMartinezGarciaCV2026.pdf';
   var pdfWorkerUrl =
     cvConfig.pdfWorkerUrl || 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-  var downloadFilename = cvConfig.downloadFilename || 'ManuelMartinezGarcia_Resume.pdf';
+  var downloadFilename = cvConfig.downloadFilename || 'ManuelMartinezGarcia_CV.pdf';
 
   function showPdfError(message) {
     var container = document.getElementById('pdf-viewer-container');

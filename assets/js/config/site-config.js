@@ -29,7 +29,7 @@
 
   window.SiteConfig = {
     footer: {
-      home: 'Last updated March 19, 2026 · Hosted on GitHub Pages.',
+      home: 'Last updated November 20, 2026 · Hosted on GitHub Pages.',
       default: 'Hosted on GitHub Pages.',
       iconCreditLabel: 'Icons by',
       iconCreditHref: 'https://lordicon.com/',
@@ -58,7 +58,7 @@
       },
       {
         key: 'cv',
-        label: 'Resume',
+        label: 'CV',
         href: '/cv/',
         indicatorClass: 'doc-verified',
         indicator: {
@@ -134,7 +134,7 @@
       },
     ],
     contact: {
-      email: 'manpazito@berkeley.edu',
+      email: 'manpazito@ucla.edu',
       recaptchaSiteKey: '6LeSu3QsAAAAAG4NmlTL3GkFBmFfikYrCcdcyYHX',
       formspreeEndpoint: 'https://formspree.io/f/xnjbonvv',
       submitCooldownMs: 60000,
@@ -142,9 +142,9 @@
       toastDurationMs: 4000,
     },
     cv: {
-      pdfUrl: '/assets/cv/ManuelMartinezGarciaResume2026.pdf',
+      pdfUrl: '/assets/cv/ManuelMartinezGarciaCV2026.pdf',
       pdfWorkerUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
-      downloadFilename: 'ManuelMartinezGarcia_Resume.pdf',
+      downloadFilename: 'ManuelMartinezGarcia_CV.pdf',
     },
   };
 })(window);
