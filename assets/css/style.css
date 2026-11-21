@@ -949,7 +949,7 @@ button, input, select, textarea {
   flex: 1 1 300px;
   padding-top: 8px;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.65rem;
   color: var(--transit-light);
 }
 
@@ -964,7 +964,6 @@ button, input, select, textarea {
 
 .intro-pronouns {
   display: block;
-  margin-bottom: -6px;
   border-bottom: 1px solid #fff;
   font-size: 18px;
   color: #ffffff;
