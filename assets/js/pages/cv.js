@@ -17,7 +17,7 @@
   var pageNumber = 1;
   var version = 0;
 
-  async function renderPage() {
+  async function renderPage(returnToPreview) {
     var request = version;
     previous.disabled = next.disabled = true;
     try {
@@ -33,6 +33,12 @@
       total.textContent = pdf.numPages;
       canvasWrapper.hidden = false;
       status.textContent = '';
+      canvasWrapper.setAttribute('aria-label', 'PDF preview, page ' + pageNumber + ' of ' + pdf.numPages);
+      previous.hidden = next.hidden = pdf.numPages === 1;
+      if (returnToPreview) {
+        canvasWrapper.focus({ preventScroll: true });
+        canvasWrapper.scrollIntoView({ block: 'start' });
+      }
       previous.disabled = pageNumber === 1;
       next.disabled = pageNumber === pdf.numPages;
     } catch (error) {
@@ -55,7 +61,8 @@
     download.title = 'Download ' + name + ' (PDF)';
     download.setAttribute('aria-label', download.title);
     previous.disabled = next.disabled = true;
-    if (canvasWrapper.hidden) status.textContent = 'Loading ' + name + '…';
+    canvasWrapper.hidden = true;
+    status.textContent = 'Loading ' + name + '…';
     if (rendering) rendering.cancel();
     if (loading) loading.destroy().catch(function () {});
 
@@ -75,11 +82,11 @@
 
   previous.addEventListener('click', function () {
     pageNumber -= 1;
-    renderPage();
+    renderPage(true);
   });
   next.addEventListener('click', function () {
     pageNumber += 1;
-    renderPage();
+    renderPage(true);
   });
 
   choices.forEach(function (link, index) {

@@ -36,18 +36,7 @@
             </nav>
           </div>
 
-          <p id="pdf-status" role="status"></p>
           <div id="pdf-viewer-container" class="pdf-viewer-container">
-            <div id="pdf-canvas-wrapper" hidden>
-              <canvas id="pdf-canvas"></canvas>
-            </div>
-            <div class="pdf-navigation">
-              <button id="prev-page" class="pdf-nav-btn">← Previous</button>
-              <span id="page-info"
-                >Page <span id="current-page">1</span> of <span id="total-pages">1</span></span
-              >
-              <button id="next-page" class="pdf-nav-btn">Next →</button>
-            </div>
             <div class="pdf-actions">
               <a id="open-pdf" class="btn" target="_blank" rel="noopener"
                 href="/assets/cv/ManuelMartinezGarciaCV2026.pdf">Open PDF</a>
@@ -59,6 +48,17 @@
                   <path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" />
                 </svg>
               </a>
+            </div>
+            <p id="pdf-status" role="status"></p>
+            <div id="pdf-canvas-wrapper" role="group" aria-label="PDF preview" tabindex="-1" hidden>
+              <canvas id="pdf-canvas"></canvas>
+            </div>
+            <div class="pdf-navigation">
+              <button id="prev-page" class="pdf-nav-btn">← Previous</button>
+              <span id="page-info"
+                >Page <span id="current-page">1</span> of <span id="total-pages">1</span></span
+              >
+              <button id="next-page" class="pdf-nav-btn">Next →</button>
             </div>
           </div>
         </div>

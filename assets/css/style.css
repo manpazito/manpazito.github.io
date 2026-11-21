@@ -922,11 +922,27 @@ button, input, select, textarea {
   max-width: 100%;
   padding: 8px clamp(14px, 3vw, 26px);
   font-size: clamp(32px, 6vw, 50px);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.intro-section > .header-title::before,
+.intro-text p::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  z-index: -1;
+  pointer-events: none;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), transparent 65%);
   backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  border-radius: 24px;
+  border-radius: 40px;
+  mask-image:
+    linear-gradient(to right, transparent, #000 24px, #000 calc(100% - 24px), transparent),
+    linear-gradient(to bottom, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+  mask-composite: intersect;
+}
+
+.intro-text p::before {
+  inset: -20px -26px;
 }
 
 .mobile-name-break {
@@ -954,6 +970,8 @@ button, input, select, textarea {
 }
 
 .intro-text p {
+  position: relative;
+  z-index: 0;
   width: fit-content;
   margin: 0;
 }
@@ -1959,6 +1977,7 @@ a.btn.btn-outline:hover {
 }
 
 #pdf-status:empty,
+.pdf-navigation .pdf-nav-btn[hidden],
 #pdf-canvas-wrapper[hidden],
 #pdf-canvas-wrapper[hidden] + .pdf-navigation {
   display: none;
@@ -2014,8 +2033,8 @@ a.btn.btn-outline:hover {
 
 .pdf-nav-btn {
   padding: 10px 16px;
-  background: var(--primary);
-  color: #fff;
+  background: var(--bg);
+  color: var(--primary-dark);
   border: none;
   border-radius: 4px;
   font-weight: 600;
@@ -2025,14 +2044,15 @@ a.btn.btn-outline:hover {
 }
 
 .pdf-nav-btn:hover:not(:disabled) {
-  background: var(--primary-dark);
-  box-shadow: 0 2px 8px rgba(200, 90, 58, 0.3);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pdf-nav-btn:disabled {
-  background: #ccc;
+  background: transparent;
+  color: var(--bg);
+  box-shadow: inset 0 0 0 1px currentColor;
   cursor: not-allowed;
-  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
