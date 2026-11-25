@@ -138,10 +138,22 @@
   }
 
   function renderFooter(currentPage) {
-    var primaryText = currentPage === 'home' ? footerConfig.home : footerConfig.default;
+    var primaryText = footerConfig.default;
 
     if (!primaryText) {
       primaryText = 'Hosted on GitHub Pages.';
+    }
+
+    if (currentPage === 'home') {
+      var lastModified = new Date(document.lastModified);
+      if (!Number.isNaN(lastModified.getTime())) {
+        var formattedDate = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(lastModified);
+        primaryText = (footerConfig.lastUpdatedLabel || 'Last updated') + ' ' + formattedDate + ' · ' + primaryText;
+      }
     }
 
     var creditLabel = footerConfig.iconCreditLabel || 'Icons by';
