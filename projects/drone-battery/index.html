@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drone Battery Consumption Modeling for Autonomous Medical Delivery Systems | Manuel Martinez Garcia</title>
-    <meta name="description" content="Developing a model at Zipline to predict drone energy consumption using machine learning and physics-based approaches." />
+    <meta name="description" content="A UC Berkeley senior design project comparing regression and machine learning models for preflight battery-use estimation in autonomous medical delivery." />
     <meta name="author" content="Manuel Martinez Garcia" />
     <meta property="og:title" content="Drone Battery Consumption Modeling for Autonomous Medical Delivery Systems | Manuel Martinez Garcia" />
-    <meta property="og:description" content="Developing a model at Zipline to predict drone energy consumption using machine learning and physics-based approaches." />
+    <meta property="og:description" content="A UC Berkeley senior design project comparing regression and machine learning models for preflight battery-use estimation in autonomous medical delivery." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/projects/drone-battery/" />
     <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
@@ -27,14 +27,53 @@
 
         <div id="main-content">
           <p>
-            Developed models combining physics and machine learning to estimate battery use for autonomous
-            medical delivery flights across different flight paths and operating conditions.
+            For my UC Berkeley senior design project, I worked with a team to estimate how much
+            battery charge an autonomous medical delivery flight would use. We focused on estimates
+            that could be made before takeoff from characteristics of a planned route.
+          </p>
+
+          <h2>Modeling approach</h2>
+          <p>
+            We summarized individual flight records into one set of route features per flight.
+            This let us compare two ways of estimating total charge use from the same inputs.
+          </p>
+
+          <figure class="project-figure">
+            <img class="featured-image" src="/assets/img/projects/drone-battery/modeling-workflow.png"
+              width="960" height="250" alt="Workflow from flight records to route features to a battery-use estimate." />
+            <figcaption class="image-caption">Conceptual overview of how flight records informed preflight estimates.</figcaption>
+          </figure>
+
+          <ul>
+            <li><strong>Linear regression</strong> provided a baseline for relating route characteristics to total charge use.</li>
+            <li><strong>A tree-based model</strong> allowed for nonlinear relationships between those same inputs and charge use.</li>
+          </ul>
+
+          <h2>Evaluation and battery planning</h2>
+          <p>
+            We compared predictions with recorded charge use and examined underestimates
+            specifically. An underestimate matters for planning because it leaves less charge
+            available on arrival than expected. We explored how a planning reserve could account
+            for that uncertainty.
+          </p>
+
+          <figure class="project-figure">
+            <img class="featured-image" src="/assets/img/projects/drone-battery/battery-planning.png"
+              width="960" height="250" alt="A planning reserve is added to estimated charge use." />
+            <figcaption class="image-caption">Illustrative split between estimated charge use and a planning reserve. Segments are schematic and have no numerical scale.</figcaption>
+          </figure>
+
+          <h2>What we found</h2>
+          <p>
+            In retrospective testing, the model underestimated charge use on some flights held
+            out of training. That made underestimation a separate planning concern from overall
+            prediction error. We evaluated the two separately because a model can have low
+            average error while still underestimating the charge needed for an individual flight.
           </p>
 
           <p>
-            The models were designed to support battery allocation and dispatch planning.
             My <a href="/projects/drone-risk-allocation/">current drone allocation research</a>
-            focuses on deciding which drones should take each task and how they should route under risk.
+            explores how battery reserves and other constraints shape task and routing decisions.
           </p>
 
           <p>

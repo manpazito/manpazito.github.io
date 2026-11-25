@@ -1,284 +1,246 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Manuel Martinez Garcia</title>
-    <meta name="description" content="Engineering and research projects by Manuel Martinez Garcia — vehicle routing, transportation systems, machine learning, and operations research." />
-    <meta name="author" content="Manuel Martinez Garcia" />
-    <!-- Open Graph -->
-    <meta property="og:title" content="Projects | Manuel Martinez Garcia" />
-    <meta property="og:description" content="Engineering and research projects by Manuel Martinez Garcia — vehicle routing, transportation systems, machine learning, and operations research." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://manpazito.github.io/projects/" />
-    <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
-    <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </head>
 
-  <body class="projects-page projects-list-page" data-page="projects">
-    <div id="page">
-      <aside id="sidebar"></aside>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Work | Manuel Martinez Garcia</title>
+  <meta name="description"
+    content="Engineering and research projects by Manuel Martinez Garcia — vehicle routing, transportation systems, machine learning, and operations research." />
+  <meta name="author" content="Manuel Martinez Garcia" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="My Work | Manuel Martinez Garcia" />
+  <meta property="og:description"
+    content="Engineering and research projects by Manuel Martinez Garcia — vehicle routing, transportation systems, machine learning, and operations research." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manpazito.github.io/projects/" />
+  <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
+  <link rel="icon" type="image/png" href="/assets/img/icons/manpazito_icon.png" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
 
-      <main id="content">
-        <div class="intro-section header-offset">
-          <h1 class="header-title">Projects</h1>
-        </div>
+<body class="projects-page projects-list-page" data-page="projects">
+  <div id="page">
+    <aside id="sidebar"></aside>
 
-        <div id="main-content">
-          <h2>Current Research</h2>
+    <main id="content">
+      <div class="intro-section header-offset">
+        <h1 class="header-title">My Work</h1>
+      </div>
 
-          <p id="drone-risk-allocation">
-            <b>Risk-Constrained Dynamic Task Allocation and Routing</b><br />
-            At UCLA’s HUMAN Lab, I’m developing a mixed-integer model that assigns tasks and routes
-            to autonomous drones. It replans when conditions change and accounts for battery reserves,
-            deadlines, the probability of completing a task, and limits on collision risk.
-            I evaluate task completion, energy use, and replanning cost in synthetic simulations.
-            <br />
-            <a href="/projects/drone-risk-allocation/" class="btn btn-outline">More info...</a>
-          </p>
+      <div id="main-content">
+        <h2>Research</h2>
+        <h3 class="research-ongoing-heading">
+          Ongoing at
+          <img src="/assets/img/logos/human-lab.png" alt="HUMAN Lab" />
+        </h3>
 
-          <h2>Other Ongoing Projects</h2>
+        <p>All of my ongoing research is conducted at UCLA’s
+          <a href="https://sites.google.com/cornell.edu/youngseokim/human-lab">HUMAN Lab</a>.
+        </p>
 
-          <p>
-            <b>Spectral CVRP: Better First Guesses and Learned Edge Priors</b><br />
-            Evaluating whether spectral features and learned edge priorities can improve starting
-            routes for capacitated vehicle routing. Comparisons use the same downstream solver,
-            matched time budgets, and independent checks of route feasibility.
-            <br />
-            <a href="/projects/spectral-cvrp/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4 id="drone-risk-allocation">Risk-Constrained Dynamic Task Allocation and Routing</h4>
+        <p>
+          I’m developing a mixed-integer model that assigns tasks and routes
+          to autonomous drones. It replans when conditions change and accounts for battery reserves,
+          deadlines, the probability of completing a task, and limits on collision risk.
+          I evaluate task completion, energy use, and replanning cost in synthetic simulations.
+          <br />
+          <a href="/projects/drone-risk-allocation/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>I-405 Southbound On-Ramp Metering Case Study</b><br />
-            Studying how adaptive ramp metering affects freeway merging and ramp queues.
-            The current prototypes use synthetic traffic scenarios.
-            <br />
-            <a href="/projects/i405-ramp-metering/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>Spectral CVRP: Better First Guesses and Learned Edge Priors</h4>
+        <p>
+          Evaluating whether spectral features and learned edge priorities can improve starting
+          routes for capacitated vehicle routing. Comparisons use the same downstream solver,
+          matched time budgets, and independent checks of route feasibility.
+          <br />
+          <a href="/projects/spectral-cvrp/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <h2>Earlier Research</h2>
+        <h4 id="multimodal-rider-preferences">Multimodal Rider Preferences for Scooter Transfers</h4>
+        <p>
+          Designing a stated-choice study to estimate how much travel time riders need to save
+          to use a shared scooter between two transit legs. The study will use a multinomial
+          logit (MNL) model to estimate how scooter fares and the consequences of missing a
+          connection affect that tradeoff, while holding first- and last-mile access fixed.
+          <br />
+          <a href="/projects/multimodal-bike-router/" class="btn btn-outline">Related routing project</a>
+        </p>
 
-          <p>
-            <b>Drone Battery Consumption Modeling for Autonomous Medical Delivery Systems</b><br />
-            Developed models that combine physics and machine learning to predict drone battery use across flight paths and operating conditions.
-            <br />
-            <a href="/projects/drone-battery/" class="btn btn-outline">More info...</a>
-          </p>
+        <h3>Past</h3>
 
-          <p>
-            <b>CVRP Heuristics vs Machine Learning Benchmarking</b><br />
-            Benchmarking classical heuristics against learning-based methods for the Capacitated
-            Vehicle Routing Problem, with an emphasis on performance, scalability, and
-            generalization. Supported by the 2025 Firebaugh Research Scholarship.
-            <br />
-            <a
-              href="https://github.com/manpazito/cvrp-ml-tradeoffs"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="/projects/cvrp-ml/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>Calyber: A Ridesharing Game</h4>
+        <p>
+          Developed pricing and matching algorithms for shared rides under Prof. Chiwei Yan at
+          UC Berkeley. A major part of my contribution was developing teaching materials that
+          turned the research into classroom modules, with that work housed in a private GitHub
+          repository. The project was runner-up in the 2025 INFORMS Case Competition.
+          <br />
+          <a href="/projects/calyber/" class="btn btn-outline">More info...</a>
+          <a href="/assets/img/posters/calyber-poster.png" class="btn btn-outline">Research Poster</a>
+        </p>
 
-          <p>
-            <b>Cal Transpo Operations Learning Materials</b><br />
-            <img
-              src="/assets/img/cal-transpo-logo.png"
-              alt="Cal Transpo logo"
-              class="project-logo project-logo--with-gap"
-            />
-            <img
-              src="/assets/img/cal-ite-logo.png"
-              alt="Cal ITE logo"
-              class="project-logo"
-            /><br />
-            Developing structured learning materials for the Cal Transpo Operations subteam,
-            covering optimization, simulation, and practical decision-making workflows.
-            <br />
-            <a
-              href="https://github.com/manpazito/ops-learning-mat"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="/projects/cal-transpo/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>CVRP Heuristics vs Machine Learning Benchmarking</h4>
+        <p>
+          Benchmarking classical heuristics against learning-based methods for the Capacitated
+          Vehicle Routing Problem, with an emphasis on performance, scalability, and
+          generalization. Supported by the 2025
+          <a href="https://grad.berkeley.edu/admissions/berkeley-undergrads/firebaugh-scholars-program/">Firebaugh
+            Research Scholarship</a>.
+          <br />
+          <a href="https://github.com/manpazito/cvrp-ml-tradeoffs" target="_blank" rel="noopener"
+            class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="/projects/cvrp-ml/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>California High School College-Going Rates &amp; CEP Partner Analysis</b><br />
-            <img
-              src="/assets/img/cep_logo.png"
-              alt="CEP logo"
-              class="project-logo"
-            /><br />
-            Exploratory data analysis using California education data to compare college-going
-            rates across counties and districts, and examine how CEP partner schools compare to
-            other schools across the state.
-            <br />
-            <a href="/projects/ca-college-going-cep/" class="btn btn-outline">More info...</a>
-          </p>
+        <h2>Projects</h2>
+        <h3>Ongoing</h3>
 
-          <h2>Past</h2>
+        <h4>I-405 Southbound On-Ramp Metering Case Study</h4>
+        <p>
+          Comparing four metering strategies at the Ventura Boulevard on-ramp using a
+          <a href="https://dot.ca.gov/programs/traffic-operations/mpr/pems-source">PeMS</a>-informed traffic simulation.
+          <br />
+          <a href="/projects/i405-ramp-metering/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>Multi-modal Bike Router For First-/Last-Mile Transit Access</b><br />
-            Built a Python router that combines OpenStreetMap, GTFS, and bicycle infrastructure data.
-            It weighs travel time against cycling safety while limiting detours.
-            <br />
-            <a href="/projects/multimodal-bike-router/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>Multi-modal Bike Router For First-/Last-Mile Transit Access</h4>
+        <p>
+          Built a Python router that combines
+          <a href="https://www.openstreetmap.org/about">OpenStreetMap</a>,
+          <a href="https://gtfs.org/documentation/overview/">GTFS</a>, and bicycle infrastructure data.
+          It weighs travel time against cycling safety while limiting detours.
+          <br />
+          <a href="https://github.com/manpazito/multimodal-route-planner" target="_blank" rel="noopener"
+            class="btn btn-primary github-button">
+            <img src="/assets/img/icons/github.svg" alt="" aria-hidden="true" class="repo-icon" />
+            GitHub Repo (Private)
+          </a>
+          <a href="/projects/multimodal-bike-router/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>Multi-Objective Wind Turbine Blade Optimizer</b><br />
-            End-to-end aerodynamic optimization pipeline for wind-turbine blades combining XFOIL
-            airfoil polars, BEM rotor modeling, and NSGA-II style multi-objective search. Explores
-            tradeoffs between power and load while selecting blade profile, angle of attack, twist
-            distribution, and blade count.
-            <br />
-            <a
-              href="https://github.com/manpazito/wind-turbine"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="/projects/wind-turbine/" class="btn btn-outline">More info...</a>
-          </p>
+        <h3>Past</h3>
 
-          <p>
-            <b>Stochastic Modeling of Airline Cabin Boarding Efficiency</b><br />
-            Discrete-time, agent-based simulator for commercial aircraft boarding with passengers,
-            aisle movement constraints, and overhead-bin interactions. Supports controlled
-            comparisons of boarding strategies and outputs congestion, seat timing, total boarding
-            duration, plus optional ASCII/GIF visualizations.
-            <br />
-            <a
-              href="https://github.com/manpazito/plane-boarding-sim"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="/projects/plane-boarding/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>Drone Battery Consumption Modeling for Autonomous Medical Delivery Systems</h4>
+        <p>
+          In a UC Berkeley senior design project, my team compared regression and machine learning
+          models for estimating drone battery use before flight and examined how prediction
+          uncertainty affects battery planning.
+          <br />
+          <a href="/projects/drone-battery/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>311 Neighborhood Equity Analysis</b><br />
-            Research analysis of 311 service requests to evaluate neighborhood-level equity in
-            response patterns and access to city services, using spatial analysis and public-policy
-            interpretation.
-            <br />
-            <a
-              href="https://github.com/manpazito/311-neighborhood-equity"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="https://arcg.is/0fnbnW0" target="_blank" rel="noopener" class="btn btn-primary"
-              >ArcGIS StoryMap</a
-            >
-            <a href="/projects/311-equity/" class="btn btn-outline">More info...</a>
-          </p>
+        <h4>Cal Transpo Operations Learning Materials</h4>
+        <p>
+          <img src="/assets/img/cal-transpo-logo.png" alt="Cal Transpo logo"
+            class="project-logo project-logo--with-gap" />
+          <img src="/assets/img/cal-ite-logo.png" alt="Cal ITE logo" class="project-logo" /><br />
+          Developing structured learning materials for the
+          <a href="https://transpo.studentorg.berkeley.edu/about/">Cal Transpo</a> Operations subteam,
+          covering optimization, simulation, and practical decision-making workflows.
+          <br />
+          <a href="https://github.com/manpazito/ops-learning-mat" target="_blank" rel="noopener"
+            class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="/projects/cal-transpo/" class="btn btn-outline">More info...</a>
+        </p>
 
-          <p>
-            <b>Predicting Homelessness</b><br />
-            Machine learning models to predict homelessness risk using socioeconomic indicators,
-            with feature engineering, evaluation, and policy-oriented interpretation.
-            <br />
-            <a
-              href="https://github.com/manpazito/PredictingHomelessness"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="repo-icon"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                ></path>
-              </svg>
-              GitHub Repo
-            </a>
-            <a href="/projects/predicting-homelessness/" class="btn btn-outline">More info...</a>
-          </p>
-        </div>
+        <h4>Multi-Objective Wind Turbine Blade Optimizer</h4>
+        <p>
+          End-to-end aerodynamic optimization pipeline for wind-turbine blades combining XFOIL
+          airfoil polars, BEM rotor modeling, and NSGA-II style multi-objective search. Explores
+          tradeoffs between power and load while selecting blade profile, angle of attack, twist
+          distribution, and blade count.
+          <br />
+          <a href="https://github.com/manpazito/wind-turbine-blade-moo" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="/projects/wind-turbine/" class="btn btn-outline">More info...</a>
+        </p>
 
-        <div id="footer"></div>
-      </main>
-    </div>
+        <h4>Stochastic Modeling of Airline Cabin Boarding Efficiency</h4>
+        <p>
+          Discrete-time, agent-based simulator for commercial aircraft boarding with passengers,
+          aisle movement constraints, and overhead-bin interactions. Supports controlled
+          comparisons of boarding strategies and outputs congestion, seat timing, total boarding
+          duration, plus optional ASCII/GIF visualizations.
+          <br />
+          <a href="https://github.com/manpazito/plane-boarding-sim" target="_blank" rel="noopener"
+            class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="/projects/plane-boarding/" class="btn btn-outline">More info...</a>
+        </p>
 
-    <script defer src="/assets/js/config/site-config.js"></script>
-    <script defer src="/assets/js/utils/nav-lottie.js"></script>
-    <script defer src="/assets/js/layout/shell.js"></script>
-  </body>
+        <h4>311 Neighborhood Equity Analysis</h4>
+        <p>
+          Research analysis of 311 service requests to evaluate neighborhood-level equity in
+          response patterns and access to city services, using spatial analysis and public-policy
+          interpretation.
+          <br />
+          <a href="https://github.com/manpazito/311-neighborhood-equity" target="_blank" rel="noopener"
+            class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="https://arcg.is/0fnbnW0" target="_blank" rel="noopener" class="btn btn-primary">ArcGIS StoryMap</a>
+          <a href="/projects/311-equity/" class="btn btn-outline">More info...</a>
+        </p>
+
+        <h4>Predicting Homelessness</h4>
+        <p>
+          Machine learning models to predict homelessness risk using socioeconomic indicators,
+          with feature engineering, evaluation, and policy-oriented interpretation.
+          <br />
+          <a href="https://github.com/manpazito/PredictingHomelessness" target="_blank" rel="noopener"
+            class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="repo-icon">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            GitHub Repo
+          </a>
+          <a href="/projects/predicting-homelessness/" class="btn btn-outline">More info...</a>
+        </p>
+      </div>
+
+      <div id="footer"></div>
+    </main>
+  </div>
+
+  <script defer src="/assets/js/config/site-config.js"></script>
+  <script defer src="/assets/js/utils/nav-lottie.js"></script>
+  <script defer src="/assets/js/layout/shell.js"></script>
+</body>
+
 </html>

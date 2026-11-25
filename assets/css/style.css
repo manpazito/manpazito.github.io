@@ -66,8 +66,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 .intro-greeting,
-.section-subheading,
-.projects-list-page #main-content p > b:first-child {
+.section-subheading {
   font-family: 'Libre Baskerville', Georgia, serif;
 }
 
@@ -855,8 +854,7 @@ button, input, select, textarea {
 }
 
 #main-content h3,
-.contact-info h3,
-.projects-list-page #main-content p > b:first-child {
+.contact-info h3 {
   padding-bottom: 4px;
   border-bottom: 3px solid var(--primary);
   font-size: 1.375rem;
@@ -923,6 +921,52 @@ button, input, select, textarea {
   padding: 8px clamp(14px, 3vw, 26px);
   font-size: clamp(32px, 6vw, 50px);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+[data-project="plane-boarding"] .intro-section {
+  background-image: url('/assets/img/projects/plane-boarding/cabin-boarding.png');
+  background-position: center 45%;
+}
+
+[data-project="wind-turbine"] .intro-section {
+  background-image: url('/assets/img/projects/wind-turbine/wind-turbine-header.png');
+  background-position: center 60%;
+}
+
+[data-project="i405-ramp-metering"] #content {
+  background: #faf8f4;
+}
+
+[data-project="i405-ramp-metering"] .intro-section {
+  background-image: url('/assets/img/i405-ventura-aerial.webp');
+  background-position: 76% 56%;
+}
+
+[data-project="i405-ramp-metering"] .intro-section::before {
+  background: linear-gradient(90deg, rgba(28, 20, 16, .8) 38%, rgba(28, 20, 16, .18) 76%);
+}
+
+[data-project="i405-ramp-metering"] .intro-section > .header-title::before {
+  content: none;
+}
+
+@media (min-width: 801px) {
+  [data-project="i405-ramp-metering"] .intro-section > .header-title {
+    max-width: 66%;
+  }
+}
+
+@media (max-width: 800px) {
+  [data-project="i405-ramp-metering"] .intro-section {
+    padding-bottom: 168px;
+    background-color: #281c16;
+    background-size: max(100%, 500px) auto;
+    background-position: right bottom;
+  }
+
+  [data-project="i405-ramp-metering"] .intro-section::before {
+    background: linear-gradient(to bottom, #281c16 calc(100% - 160px), transparent calc(100% - 160px), rgba(28, 20, 16, .18));
+  }
 }
 
 .intro-section > .header-title::before,
@@ -1004,18 +1048,28 @@ button, input, select, textarea {
 }
 
 /* Project titles */
-.projects-list-page #main-content p > b:first-child {
-  display: block;
-  margin-bottom: 8px;
+.research-ongoing-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.projects-list-page #main-content p > b:first-child + br {
-  display: none;
+.research-ongoing-heading img {
+  width: 136px;
+  max-width: 50%;
+  height: auto;
+}
+
+.projects-list-page #main-content h4 {
+  margin: 22px 0 4px;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 /* Tighter spacing for project list entries after tag-chip removal */
 .projects-list-page #main-content p {
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
@@ -1023,9 +1077,15 @@ button, input, select, textarea {
   margin-top: 4px;
 }
 
-.projects-list-page #main-content a.btn,
-.projects-page #main-content a.btn-primary[href^="https://github.com/"] {
+.projects-page #main-content :is(a.btn, .pdf-nav-btn) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: 5px 14px;
+  line-height: 1.25;
+  vertical-align: middle;
 }
 
 .projects-page #main-content a.btn-primary:is([href^="https://github.com/"], [href^="https://arcg.is/"]) {
@@ -1057,12 +1117,41 @@ button, input, select, textarea {
 }
 
 .research-entry-logo {
-  align-self: stretch;
+  align-self: center;
   width: auto;
+  height: auto;
   object-fit: contain;
   flex-shrink: 0;
-  max-width: 120px;
+  max-width: min(120px, 25%);
+  max-height: 64px;
   margin-left: auto;
+}
+
+.human-lab-logo {
+  width: 160px;
+  max-width: 30%;
+}
+
+[data-page="home"] #main-content > h3 {
+  margin-bottom: 8px;
+}
+
+[data-page="home"] #main-content > h4 {
+  margin: 14px 0 6px;
+}
+
+[data-page="home"] #main-content > p.research-entry {
+  margin-block: 8px 0;
+}
+
+[data-page="home"] #main-content > h4 + .research-entry ul {
+  margin-block: 0;
+}
+
+[data-page="home"] #main-content > h3 + h4,
+[data-page="home"] #main-content > h4 + p.research-entry,
+[data-page="home"] #main-content > :is(h3, h4) + :is(p, ul) {
+  margin-top: 0;
 }
 
 .section-spaced {
@@ -1386,8 +1475,6 @@ a.btn:hover {
     margin-inline: auto;
   }
 
-  .projects-list-page #main-content a.btn,
-  .projects-page #main-content a.btn-primary[href^="https://github.com/"],
   .cv-controls a,
   .pdf-nav-btn {
     box-sizing: border-box;
@@ -1584,6 +1671,13 @@ a.btn.btn-outline:hover {
   margin: 22px 0;
 }
 
+[data-project="drone-battery"] .project-figure,
+[data-project="plane-boarding"] .project-figure,
+[data-project="multimodal-bike-router"] .project-figure {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
 .project-figure-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1742,10 +1836,6 @@ a.btn.btn-outline:hover {
 
 .project-figure--hero {
   margin-top: 28px;
-}
-
-.multimodal-bike-router-page .project-figure-grid .project-figure:last-child {
-  grid-column: auto;
 }
 
 .project-comparison {

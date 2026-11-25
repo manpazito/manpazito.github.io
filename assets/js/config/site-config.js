@@ -48,7 +48,7 @@
       },
       {
         key: 'projects',
-        label: 'Projects',
+        label: 'My Work',
         href: '/projects/',
         indicatorClass: 'cvrp-model',
         indicator: {
@@ -58,7 +58,7 @@
       },
       {
         key: 'cv',
-        label: 'CV / Resume',
+        label: 'CV & Résumé',
         href: '/cv/',
         indicatorClass: 'doc-verified',
         indicator: {

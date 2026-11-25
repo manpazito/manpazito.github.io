@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I-405 Southbound On-Ramp Metering Case Study | Manuel Martinez Garcia</title>
-    <meta name="description" content="A case study on adaptive on-ramp metering along southbound I-405." />
+    <meta name="description" content="A PeMS-informed simulation study of four metering strategies at the Ventura Boulevard on-ramp to southbound I-405." />
     <meta name="author" content="Manuel Martinez Garcia" />
     <meta property="og:title" content="I-405 Southbound On-Ramp Metering Case Study | Manuel Martinez Garcia" />
-    <meta property="og:description" content="A case study on adaptive on-ramp metering along southbound I-405." />
+    <meta property="og:description" content="A PeMS-informed simulation study of four metering strategies at the Ventura Boulevard on-ramp to southbound I-405." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manpazito.github.io/projects/i405-ramp-metering/" />
     <meta property="og:image" content="https://manpazito.github.io/assets/img/me.jpg" />
@@ -26,11 +26,22 @@
         </div>
 
         <div id="main-content">
-          <p>A case study on adaptive on-ramp metering along southbound I-405.</p>
+          <p>At the Ventura Boulevard loop on-ramp to southbound I-405 in Sherman Oaks, how much can ramp metering ease freeway congestion, and how much delay shifts to the ramp?</p>
 
-          <p>The current prototypes use synthetic traffic scenarios to study how metering affects freeway merging and ramp queues.</p>
+          <h2>Study setup</h2>
+          <p>The microscopic simulation uses the ramp geometry and observed Caltrans PeMS traffic data from October 11, 2022. Across 1,400 runs, the study compares no metering, a fixed release rate, a Caltrans-style traffic-responsive plan with queue override, and ALINEA occupancy feedback with queue protection. It varies demand, downstream capacity, driver behavior, detector availability, and controller settings.</p>
+
+          <h2>Simulation findings</h2>
+          <p>At the observed demand, none of the metering strategies met the study’s threshold for a change in freeway congestion relative to no metering. With storage for about 25 vehicles, queue protection governed the two responsive controllers for roughly three-quarters of the simulated morning.</p>
+
+          <p>Under some lighter-demand scenarios, ALINEA reduced freeway congestion without a clear reduction in time per vehicle. The benefit to freeway traffic came with more waiting on the ramp.</p>
+
+          <p>The comparison uses one observed day, a partially calibrated model with one freeway lane, and assumed Caltrans controller settings because the ramp’s actual plan is unpublished. The findings describe modeled scenarios.</p>
 
           <p>
+            <a href="https://github.com/manpazito/i405-ventura-ramp-control" class="btn btn-primary github-button" target="_blank" rel="noopener">
+              <img src="/assets/img/icons/github.svg" alt="" aria-hidden="true" class="repo-icon" />GitHub Repo
+            </a>
             <a href="/projects/" class="btn btn-outline">Back to Projects</a>
           </p>
         </div>

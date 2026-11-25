@@ -26,6 +26,8 @@
         </div>
 
         <div id="main-content">
+          <p><small>Header photo by Corbis via Getty Images, as published in Forbes.</small></p>
+
           <p>
             A discrete-time, agent-based simulation framework for studying commercial aircraft
             boarding procedures. This project models passengers, aircraft geometry, overhead bins,
@@ -46,25 +48,51 @@
             </a>
           </p>
 
+          <h2>How the simulator works</h2>
           <p>
-            The simulator models aircraft boarding as a discrete-time, agent-based process with
-            passengers, seat assignments, aisle movement constraints, and overhead-bin interactions.
-            It supports controlled comparisons of boarding strategies and reports metrics such as
-            total boarding time, seat timing, and congestion.
+            Each passenger has an assigned seat, a walking pace, and a baggage stow time.
+            As passengers enter and move along the aisle, they may have to wait for space
+            to walk, stow a bag, or reach their seat. The simulator tracks when passengers
+            enter and sit down, how congestion changes, and how long it takes to seat everyone.
           </p>
 
+          <figure class="project-figure">
+            <img class="featured-image" src="/assets/img/projects/plane-boarding/steffen_animation.gif"
+              width="1268" height="234" alt="An animated cabin diagram showing passengers entering the aisle and taking their seats under the Steffen boarding strategy." />
+            <figcaption class="image-caption">
+              One Steffen-strategy run. The animation tracks the tick, the queue, and the number of passengers seated.
+            </figcaption>
+          </figure>
+
+          <h2>What we found</h2>
           <p>
-            For complete setup instructions, CLI usage, configuration options, and analysis outputs,
-            see the GitHub repository linked above.
+            We compared five strategies across repeated simulation runs. Random boarding had
+            the lowest mean total boarding time at 452.2 ticks, followed by Steffen at 489.1,
+            Wilma at 557.7, front-to-back at 562.5, and back-to-front at 572.7.
+          </p>
+
+          <figure class="project-figure">
+            <a href="/assets/img/projects/plane-boarding/boarding_strategies_comparison.png">
+              <img class="featured-image" src="/assets/img/projects/plane-boarding/boarding_strategies_comparison.png"
+                width="2400" height="1200" loading="lazy"
+                alt="Full-size comparison chart showing simulated boarding time, time to seat, and baggage stow time across five strategies." />
+            </a>
+            <figcaption class="image-caption">Boarding outcomes across repeated runs. Select the chart for a full-size view.</figcaption>
+          </figure>
+
+          <p>
+            The study also varied baggage rates, stow times, walking speeds, and passenger
+            no-shows. The reported times are simulation ticks and reflect the cabin layout
+            and passenger behavior represented in the model.
           </p>
 
           <p><b>Contributors:</b></p>
 
           <ul>
-            <li>Mathew Mouchamel</li>
-            <li>Ali Younis</li>
-            <li>Harry Ilanyan</li>
-            <li>Manuel A. Martinez Garcia</li>
+            <li><a href="https://www.linkedin.com/in/mathewmouchamel">Mathew Mouchamel</a></li>
+            <li><a href="https://www.linkedin.com/in/ali-younis-b77256212/">Ali Younis</a></li>
+            <li><a href="https://www.linkedin.com/in/harry-ilanyan/">Harry Ilanyan</a></li>
+            <li><a href="https://www.linkedin.com/in/manpazito">Manuel A. Martinez Garcia</a></li>
           </ul>
 
           <p>
